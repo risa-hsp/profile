@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>川上りさ | Risa Kawakami Official</title>
+    <meta name="description" content="HSS型HSPの静かな自己表現。AI絵本作家 川上りさのポートフォリオサイト。">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Shippori+Mincho:wght@400;500;600&family=Zen+Old+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Color Palette --- */
+        :root {
+            --bg-color: #fcf9f6;      /* スキンベージュ */
+            --text-main: #5e4d4d;     /* ココアブラウン */
+            --text-light: #9c8c8c;    /* グレージュ */
+            --accent: #d4b5b5;        /* 大人ピンク */
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Shippori Mincho', 'Zen Old Mincho', serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        .font-eng { font-family: 'Cormorant Garamond', serif; }
+
+        /* --- Canvas & Layout --- */
+        #canvas-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        #root { position: relative; z-index: 10; }
+
+        /* --- Animations --- */
+        .fade-enter {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .fade-enter-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Components Style --- */
+        
+        /* オープニング画面 */
+        .loader-screen {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-color);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 1s ease-in-out, visibility 1s;
+        }
+        .loader-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        /* アイコンの光 */
+        .hero-glow {
+            box-shadow: 0 0 0 1px rgba(255,255,255,0.5), 0 20px 60px rgba(212, 181, 181, 0.2);
+        }
+
+        /* バナーカード（メイン） */
+        .banner-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(156, 140, 140, 0.05);
+        }
+        .banner-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(156, 140, 140, 0.15);
+        }
+        
+        .banner-img {
+            transition: transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .banner-card:hover .banner-img {
+            transform: scale(1.05);
+        }
+
+        /* おすすめ（Recommend）カード */
+        .rec-card {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(212, 181, 181, 0.3);
+            transition: all 0.4s ease;
+        }
+        .rec-card:hover {
+            background: #fff;
+            border-color: #d4b5b5;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(156, 140, 140, 0.1);
+        }
+
+        /* Noteカード（新デザイン：小さいバナー） */
+        .note-card {
+            display: block;
+            background: #fff;
+            border: 1px solid rgba(212, 181, 181, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        .note-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(156, 140, 140, 0.1);
+            border-color: #d4b5b5;
+        }
+        .note-img-area {
+            height: 120px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f5f0f0 0%, #e8e0e0 100%);
+            position: relative;
+        }
+        .note-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        .note-card:hover .note-img {
+            transform: scale(1.05);
+        }
+
+        /* リストアイテム */
+        .glass-item {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(212, 181, 181, 0.2);
+            transition: background 0.3s, padding-left 0.3s;
+        }
+        .glass-item:hover {
+            background: rgba(255, 255, 255, 0.8);
+            padding-left: 1.5rem;
+        }
+
+    </style>
+</head>
+<body>
+    <canvas id="canvas-bg"></canvas>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        /* ▼ 1. メインバナー（書籍・診断） ▼ */
+        const BANNERS = [
+            {
+                id: 'amazon',
+                title: "Amazon Author Page",
+                subtitle: "絵本・エッセイ一覧",
+                desc: "HSS型HSPの心に灯りをともす、静かな物語。",
+                img: "./banner1.jpg",
+                fallbackTag: "BOOKS",
+                url: "https://www.amazon.co.jp/stores/author/B0DTTXQV2K/allbooks?_encoding=UTF8&ref_=aufs_ap_ahdr_dsk_ab&pd_rd_w=mjwOn&content-id=amzn1.sym.c8ae5043-8410-40be-b001-e431eb44a0f4&pf_rd_p=c8ae5043-8410-40be-b001-e431eb44a0f4&pf_rd_r=144-6092511-3145931&pd_rd_wg=2m7yW&pd_rd_r=6a94a0df-487d-4a9a-850c-63ac41b52831"
+            },
+            {
+                id: 'reserve',
+                title: "Aura Color Diagnosis",
+                subtitle: "オーラカラー診断",
+                desc: "心理テストと4元素で紐解く、あなたの本質。",
+                img: "./banner2.jpg",
+                fallbackTag: "DIAGNOSIS",
+                url: "https://www.reservestock.jp/page/fast_scoring/2510"
+            }
+        ];
+
+        /* ▼ 2. おすすめ教材（Recommend） ▼ */
+        /* ★正確なタイトルに書き換えてください */
+        const RECOMMENDS = [
+            {
+                id: 'affiliate1',
+                title: "絵本制作講座", // ←正しいタイトルを入力
+                desc: "あなたも夢の絵本作家デビュー",
+                tag: "PICK UP",
+                img: "./affiliate1.jpg", 
+                url: "https://tqv.jp/u/Folic/a/dOabqu6U/eSw34Lfk"
+            },
+            {
+                id: 'affiliate2',
+                title: "デザインテンプレパック50", // ←正しいタイトルを入力
+                desc: "図解や漫画投稿も簡単",
+                tag: "PICK UP",
+                img: "./affiliate2.jpg", 
+                url: "https://brmk.io/qazZ1V"
+            }
+        ];
+
+        /* ▼ 3. My Note (小さいバナー2つ) ▼ */
+        const NOTES = [
+            {
+                id: 'note1',
+                title: "5日間伴走型♡自己理解リーディング",
+            
+                img: "./note1.png", // Note記事のアイキャッチ画像
+                url: "https://note.com/oracle_risa_art/n/na1521311acdc"
+            },
+            {
+                id: 'note2',
+                title: "AIアート×自己表現入門ガイド",
+                img: "./note2.png", // Note記事のアイキャッチ画像
+                url: "https://note.com/oracle_risa_art/n/n83e1c594551f"
+            }
+        ];
+
+        /* ▼ 4. Other Links (SUZURI・BASE) ▼ */
+        const LINKS = [
+            { 
+                id: 'suzuri', 
+                name: "Suzuri Store", 
+                desc: "オリジナルグッズ", 
+                url: "https://suzuri.jp/Risa_Kawakami/products" 
+            },
+            { 
+                id: 'base', 
+                name: "BASE Shop", 
+                desc: "壁紙・カード鑑定", 
+                url: "https://jib2762586.owndshop.com/" 
+            }
+        ];
+
+        /* --- Helper: 画像エラー処理 --- */
+        const handleImgError = (e) => {
+            const currentSrc = e.target.src;
+            if (currentSrc.endsWith('.jpg')) {
+                e.target.src = currentSrc.replace('.jpg', '.png');
+            } else if (currentSrc.endsWith('.png')) {
+                e.target.src = currentSrc.replace('.png', '.jpeg');
+            } else {
+                e.target.style.display = 'none';
+                if (e.target.nextSibling) e.target.nextSibling.style.display = 'flex';
+            }
+        };
+
+        /* --- Components --- */
+        const FadeIn = ({ children, delay = 0 }) => {
+            const [isVisible, setVisible] = useState(false);
+            const domRef = useRef();
+            useEffect(() => {
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => setVisible(entry.isIntersecting));
+                }, { threshold: 0.1 });
+                if (domRef.current) observer.observe(domRef.current);
+                return () => { if (domRef.current) observer.unobserve(domRef.current); };
+            }, []);
+            return (
+                <div 
+                    ref={domRef}
+                    className={`fade-enter ${isVisible ? 'fade-enter-active' : ''}`}
+                    style={{ transitionDelay: `${delay}s` }}
+                >
+                    {children}
+                </div>
+            );
+        };
+
+        const Background = () => {
+            useEffect(() => {
+                const canvas = document.getElementById('canvas-bg');
+                const ctx = canvas.getContext('2d');
+                let w, h, particles = [];
+                const resize = () => { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; };
+                window.addEventListener('resize', resize);
+                resize();
+                class P {
+                    constructor() { this.init(); }
+                    init() {
+                        this.x = Math.random() * w; this.y = Math.random() * h;
+                        this.r = Math.random() * 100 + 50;
+                        this.vx = (Math.random() - 0.5) * 0.1; this.vy = (Math.random() - 0.5) * 0.1;
+                        this.life = Math.random(); this.fade = Math.random() * 0.002 + 0.001;
+                        const c = ['226, 189, 189', '235, 219, 208', '240, 214, 183'];
+                        this.rgb = c[Math.floor(Math.random() * c.length)];
+                    }
+                    update() {
+                        this.x += this.vx; this.y += this.vy;
+                        if(this.x<-this.r)this.x=w+this.r; if(this.x>w+this.r)this.x=-this.r;
+                        if(this.y<-this.r)this.y=h+this.r; if(this.y>h+this.r)this.y=-this.r;
+                        this.life += this.fade;
+                        if(this.life > 0.4 || this.life < 0.05) this.fade = -this.fade;
+                    }
+                    draw(ctx) {
+                        const g = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.r);
+                        g.addColorStop(0, `rgba(${this.rgb}, ${this.life})`);
+                        g.addColorStop(1, `rgba(${this.rgb}, 0)`);
+                        ctx.fillStyle = g; ctx.globalCompositeOperation = 'overlay';
+                        ctx.beginPath(); ctx.arc(this.x, this.y, this.r, 0, Math.PI*2); ctx.fill();
+                    }
+                }
+                for(let i=0; i<12; i++) particles.push(new P());
+                const animate = () => {
+                    ctx.clearRect(0,0,w,h);
+                    ctx.fillStyle = '#fcf9f6'; ctx.fillRect(0,0,w,h);
+                    particles.forEach(p => { p.update(); p.draw(ctx); });
+                    requestAnimationFrame(animate);
+                };
+                animate();
+            }, []);
+            return null;
+        };
+
+        const App = () => {
+            const [loading, setLoading] = useState(true);
+            useEffect(() => { setTimeout(() => setLoading(false), 1500); }, []);
+
+            return (
+                <div className="min-h-screen pb-20">
+                    <Background />
+
+                    {/* Opening Loader */}
+                    <div className={`loader-screen ${!loading ? 'loader-hidden' : ''}`}>
+                        <div className="text-center">
+                            <h2 className="font-eng text-2xl tracking-widest text-[#5e4d4d] mb-4">Risa Kawakami</h2>
+                            <p className="font-serif text-sm text-[#9c8c8c]">静かなる情熱を、カタチに。</p>
+                        </div>
+                    </div>
+
+                    <main className="container mx-auto px-6 max-w-3xl pt-24 md:pt-32 relative z-10">
+
+                        {/* Hero Section */}
+                        <FadeIn>
+                            <div className="text-center mb-24 md:mb-32">
+                                <div className="relative w-48 h-48 md:w-64 md:h-64 mx-auto mb-10 group">
+                                    <div className="absolute inset-[-10px] border border-[#e8d0d0] rounded-full opacity-30 animate-[spin_30s_linear_infinite]"></div>
+                                    <div className="absolute inset-[-20px] border border-[#f2e6e6] rounded-full opacity-20 animate-[spin_40s_linear_infinite_reverse]"></div>
+                                    <div className="w-full h-full rounded-full overflow-hidden bg-[#fffaf8] relative hero-glow">
+                                        <img 
+                                            src="./profile1.jpg"
+                                            onError={handleImgError}
+                                            className="w-full h-full object-cover"
+                                            alt="Risa Kawakami"
+                                        />
+                                        <div className="absolute inset-0 bg-[#fcf9f6] -z-10 flex items-center justify-center hidden">
+                                            <span className="font-eng text-6xl text-[#d4c4b5]">R</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h1 className="font-eng text-4xl md:text-5xl text-[#5e4d4d] mb-4 tracking-widest">
+                                    Risa Kawakami
+                                </h1>
+                                <p className="font-eng text-xs tracking-[0.3em] text-[#9c8c8c] uppercase mb-8">
+                                    HSS / HSP Creator
+                                </p>
+                            </div>
+                        </FadeIn>
+
+                        {/* Philosophy */}
+                        <section className="mb-32 md:mb-40 px-4 md:px-12 text-center md:text-left">
+                            <FadeIn delay={0.2}>
+                                <div className="border-l-2 border-[#d4b5b5] pl-6 md:pl-10 py-2">
+                                    <p className="text-sm md:text-base leading-loose md:leading-[2.5] text-[#5e4d4d] font-medium">
+                                        繊細すぎて、生きづらいと感じていた。<br/>
+                                        飽きっぽくて、何者にもなれないと焦っていた。
+                                    </p>
+                                    <div className="h-8"></div>
+                                    <p className="text-sm md:text-base leading-loose md:leading-[2.5] text-[#5e4d4d]">
+                                        でも、それは「欠点」ではありません。<br/>
+                                        世界の彩りを深く感じる心。<br/>
+                                        次々と新しい扉を開く好奇心。
+                                    </p>
+                                    <div className="h-8"></div>
+                                    <p className="text-base md:text-lg leading-loose md:leading-[2.5] font-bold text-[#5e4d4d]">
+                                        HSS型HSPの気質は、<br className="md:hidden"/>クリエイティブのための「才能」です。
+                                    </p>
+                                    <p className="text-sm md:text-base leading-loose md:leading-[2.5] text-[#5e4d4d] mt-4 opacity-80">
+                                        AIという絵筆。Kindleという本棚。<br/>
+                                        静かな場所から、あなたの物語はもっと遠くへ行ける。
+                                    </p>
+                                </div>
+                            </FadeIn>
+                        </section>
+
+                        {/* Main Works (Amazon & Diagnosis) */}
+                        <section className="mb-20">
+                            <FadeIn delay={0.1}>
+                                <div className="flex items-center gap-4 mb-10 justify-center md:justify-start">
+                                    <span className="h-[1px] w-8 bg-[#d4b5b5]"></span>
+                                    <h2 className="font-eng text-xl tracking-[0.2em] text-[#9c8c8c]">WORKS</h2>
+                                    <span className="h-[1px] w-8 bg-[#d4b5b5]"></span>
+                                </div>
+                            </FadeIn>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+                                {BANNERS.map((banner, i) => (
+                                    <FadeIn key={banner.id} delay={i * 0.2}>
+                                        <a href={banner.url} target="_blank" rel="noopener noreferrer" className="block group">
+                                            <div className="banner-card h-56 md:h-64 w-full mb-6">
+                                                <img 
+                                                    src={banner.img} 
+                                                    onError={handleImgError}
+                                                    className="banner-img w-full h-full object-cover"
+                                                    alt={banner.title}
+                                                />
+                                                <div className="hidden w-full h-full bg-[#fffaf8] flex-col items-center justify-center p-6 text-center">
+                                                    <span className="text-[10px] border border-[#d4b5b5] px-2 py-1 tracking-widest text-[#9c8c8c] mb-3">{banner.fallbackTag}</span>
+                                                    <h3 className="font-eng text-2xl text-[#5e4d4d]">{banner.title}</h3>
+                                                </div>
+                                            </div>
+                                            <div className="text-center md:text-left px-2">
+                                                <h3 className="text-lg font-bold text-[#5e4d4d] mb-2 group-hover:text-[#d4b5b5] transition-colors font-eng">
+                                                    {banner.title}
+                                                </h3>
+                                                <p className="text-xs text-[#9c8c8c] mb-3 font-serif tracking-wide">{banner.subtitle}</p>
+                                                <p className="text-sm text-[#5e4d4d] leading-relaxed opacity-80">
+                                                    {banner.desc}
+                                                </p>
+                                                <div className="mt-4 flex items-center gap-2 text-xs font-eng tracking-widest text-[#d4b5b5] group-hover:translate-x-2 transition-transform">
+                                                    VIEW MORE <span className="text-lg">→</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </FadeIn>
+                                ))}
+                            </div>
+                        </section>
+
+                        {/* Recommend (Affiliate) */}
+                        <section className="mb-32">
+                            <FadeIn delay={0.1}>
+                                <div className="max-w-4xl mx-auto">
+                                    <p className="text-center md:text-left font-eng text-xs tracking-[0.2em] text-[#d4b5b5] mb-6">RECOMMEND</p>
+                                    
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        {RECOMMENDS.map((rec) => (
+                                            <a key={rec.id} href={rec.url} target="_blank" rel="noopener noreferrer" className="block rec-card p-6 md:p-8 rounded-sm group flex flex-col md:flex-row md:items-center gap-6">
+                                                <div className="w-full md:w-24 h-32 md:h-24 bg-[#fcf9f6] overflow-hidden relative shrink-0 border border-[#e8d0d0]">
+                                                    <img 
+                                                        src={rec.img} 
+                                                        onError={handleImgError}
+                                                        className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500" 
+                                                        alt={rec.title}
+                                                    />
+                                                    <div className="absolute inset-0 flex items-center justify-center hidden bg-[#fcf9f6]">
+                                                        <span className="font-eng text-[#d4b5b5] text-xs">PICK UP</span>
+                                                    </div>
+                                                </div>
+                                                <div className="flex-1">
+                                                    <span className="text-[9px] bg-[#fff] px-2 py-0.5 tracking-widest text-[#9c8c8c] border border-[#e8d0d0] mb-2 inline-block">
+                                                        {rec.tag}
+                                                    </span>
+                                                    <h3 className="font-eng text-lg text-[#5e4d4d] mb-1 group-hover:text-[#d4b5b5] transition-colors">{rec.title}</h3>
+                                                    <p className="text-xs text-[#5e4d4d] leading-relaxed opacity-80">{rec.desc}</p>
+                                                </div>
+                                                <div className="text-[#d4b5b5] opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0 self-center">
+                                                    →
+                                                </div>
+                                            </a>
+                                        ))}
+                                    </div>
+                                </div>
+                            </FadeIn>
+                        </section>
+
+                        {/* My Contents (Note x2 / Suzuri / BASE) */}
+                        <section className="mb-24">
+                            <FadeIn>
+                                <div className="text-center mb-10">
+                                    <h2 className="font-eng text-sm tracking-[0.2em] text-[#d4b5b5] mb-2">MY CONTENTS</h2>
+                                    <p className="font-serif text-lg text-[#5e4d4d]">世界観に触れる</p>
+                                </div>
+                            </FadeIn>
+
+                            <div className="max-w-xl mx-auto space-y-4">
+                                
+                                {/* 1. Note Articles (Small Banners) */}
+                                <div className="grid grid-cols-2 gap-4">
+                                    {NOTES.map((note) => (
+                                        <a key={note.id} href={note.url} target="_blank" rel="noopener noreferrer" className="note-card block group">
+                                            <div className="note-img-area">
+                                                <img 
+                                                    src={note.img}
+                                                    onError={(e) => {
+                                                        // 画像がない場合は非表示にし、代わりの色を表示
+                                                        e.target.style.display = 'none';
+                                                        e.target.parentElement.style.background = '#e8d0d0';
+                                                    }}
+                                                    className="note-img"
+                                                    alt={note.title}
+                                                />
+                                            </div>
+                                            <div className="p-4">
+                                                <p className="text-[10px] text-[#9c8c8c] tracking-widest uppercase mb-1">{note.desc}</p>
+                                                <h3 className="text-xs md:text-sm font-bold text-[#5e4d4d] leading-relaxed group-hover:text-[#d4b5b5] transition-colors">
+                                                    {note.title}
+                                                </h3>
+                                            </div>
+                                        </a>
+                                    ))}
+                                </div>
+
+                                {/* 2. Other Links (List) */}
+                                <div className="space-y-2 pt-2">
+                                    {LINKS.map((link, i) => (
+                                        <FadeIn key={link.id} delay={i * 0.1}>
+                                            <a href={link.url} target="_blank" rel="noopener noreferrer" className="glass-item flex items-center justify-between p-5 w-full group">
+                                                <div className="flex flex-col md:flex-row md:items-baseline md:gap-4">
+                                                    <span className="font-eng text-lg text-[#5e4d4d] tracking-wide group-hover:text-[#9c8c8c] transition-colors">
+                                                        {link.name}
+                                                    </span>
+                                                    <span className="text-xs text-[#9c8c8c] font-serif">
+                                                        - {link.desc}
+                                                    </span>
+                                                </div>
+                                                <span className="text-[#d4b5b5] opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-[-10px] group-hover:translate-x-0 duration-300">
+                                                    →
+                                                </span>
+                                            </a>
+                                        </FadeIn>
+                                    ))}
+                                </div>
+
+                            </div>
+                        </section>
+
+                        {/* Footer (SNS & LINE) */}
+                        <footer className="text-center pt-12 border-t border-[#ebdada] opacity-60">
+                            <div className="flex justify-center items-center gap-8 mb-6">
+                                <a href="https://www.instagram.com/risa.art.fortune/" target="_blank" className="hover:opacity-50 transition-opacity">
+                                    <span className="font-eng text-xs tracking-widest">INSTAGRAM</span>
+                                </a>
+                                <a href="https://www.threads.com/@risa.art.fortune" target="_blank" className="hover:opacity-50 transition-opacity">
+                                    <span className="font-eng text-xs tracking-widest">THREADS</span>
+                                </a>
+                                <a href="https://line.me/R/ti/p/@460aytuk?ts=03260933&oat_content=url" target="_blank" className="hover:opacity-50 transition-opacity flex items-center gap-1">
+                                    <span className="font-eng text-xs tracking-widest">LINE</span>
+                                </a>
+                            </div>
+                            <p className="font-eng text-[10px] tracking-[0.2em]">© Risa Kawakami.</p>
+                        </footer>
+
+                    </main>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
