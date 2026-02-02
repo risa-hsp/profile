@@ -31,9 +31,8 @@
             position: fixed; inset: 0; z-index: 9999;
             background-color: #fcf9f6;
             display: flex; align-items: center; justify-content: center;
-            transition: opacity 1.5s ease; /* 1.5秒かけてゆっくり消える */
+            transition: opacity 1.5s ease;
         }
-        /* フェードアウト用のクラス */
         .fade-out { opacity: 0; pointer-events: none; }
 
         /* --- 装飾 --- */
@@ -48,12 +47,10 @@
             box-shadow: 0 10px 25px rgba(156, 140, 140, 0.1);
         }
         
-        /* 画像拡大エフェクト */
         .img-zoom-container { overflow: hidden; }
         .img-zoom { transition: transform 1.5s ease; width: 100%; height: 100%; object-fit: cover; }
         .hover-card:hover .img-zoom { transform: scale(1.05); }
 
-        /* リスト */
         .glass-item {
             background: rgba(255, 255, 255, 0.4);
             border-bottom: 1px solid rgba(212, 181, 181, 0.2);
@@ -78,7 +75,9 @@
 
     <main class="container mx-auto px-6 max-w-3xl pt-24 md:pt-32 pb-20 relative z-10">
 
-        <div class="text-center mb-16 md:mb-20"> <div class="relative w-40 h-40 md:w-48 md:h-48 mx-auto mb-8 group"> <div class="absolute inset-[-10px] border border-[#e8d0d0] rounded-full opacity-30"></div>
+        <div class="text-center mb-16 md:mb-20">
+            <div class="relative w-40 h-40 md:w-48 md:h-48 mx-auto mb-8 group">
+                <div class="absolute inset-[-10px] border border-[#e8d0d0] rounded-full opacity-30"></div>
                 <div class="w-full h-full rounded-full overflow-hidden bg-[#fffaf8] relative hero-glow">
                     <img src="https://risa-hsp.github.io/profile/assets/assets/profile1.webp" 
                          class="w-full h-full object-cover" 
@@ -86,7 +85,7 @@
                          onerror="this.style.display='none'">
                 </div>
             </div>
-            <h1 class="font-eng text-4xl md:text-5xl text-[#5e4d4d] mb-4 tracking-widest">
+            <h1 class="font-eng text-4xl md:text-5xl text-[#6b4e3d] mb-4 tracking-widest">
                 Risa Kawakami
             </h1>
             <p class="font-eng text-xs tracking-[0.3em] text-[#9c8c8c] uppercase mb-8">
@@ -100,12 +99,14 @@
                     繊細すぎて、生きづらいと感じていた。<br>
                     飽きっぽくて、何者にもなれないと焦っていた。
                 </p>
-                <div class="h-6"></div> <p class="text-sm md:text-base leading-loose md:leading-[2.5] text-[#5e4d4d]">
+                <div class="h-6"></div>
+                <p class="text-sm md:text-base leading-loose md:leading-[2.5] text-[#5e4d4d]">
                     でも、それは「欠点」ではありません。<br>
                     世界の彩りを深く感じる心。<br>
                     次々と新しい扉を開く好奇心。
                 </p>
-                <div class="h-6"></div> <p class="text-base md:text-lg leading-loose md:leading-[2.5] font-bold text-[#5e4d4d]">
+                <div class="h-6"></div>
+                <p class="text-base md:text-lg leading-loose md:leading-[2.5] font-bold text-[#5e4d4d]">
                     HSS型HSPの気質は、<br class="md:hidden">クリエイティブのための「才能」です。
                 </p>
                 <p class="text-sm md:text-base leading-loose md:leading-[2.5] text-[#5e4d4d] mt-4 opacity-80">
@@ -151,7 +152,8 @@
             </div>
         </section>
 
-        <section class="mb-24"> <div class="max-w-4xl mx-auto">
+        <section class="mb-10">
+            <div class="max-w-4xl mx-auto">
                 <p class="text-center md:text-left font-eng text-xs tracking-[0.2em] text-[#d4b5b5] mb-6">RECOMMEND</p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -241,9 +243,7 @@
     </main>
 
     <script>
-        // 1. オープニングアニメーションを確実に消す処理
         window.addEventListener('load', () => {
-            // 2秒後にフェードアウト開始
             setTimeout(() => {
                 const loader = document.getElementById('opening-loader');
                 if(loader) {
@@ -252,7 +252,6 @@
             }, 2000); 
         });
 
-        // 2. 背景の光のアニメーション
         const canvas = document.getElementById('canvas-bg');
         const ctx = canvas.getContext('2d');
         let w = canvas.width = window.innerWidth;
