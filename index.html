@@ -168,7 +168,8 @@
                 title: "Amazon Author Page",
                 subtitle: "絵本・エッセイ一覧",
                 desc: "HSS型HSPの心に灯りをともす、静かな物語。",
-                img: "https://raw.githubusercontent.com/maribon777/risa-hsp/main/assets/banner1.webp",
+                // GitHubのリポジトリ名を profile に変更し、assetsフォルダが2重になっている点に対応
+                img: "https://raw.githubusercontent.com/maribon777/profile/main/assets/assets/banner1.webp",
                 fallbackTag: "BOOKS",
                 url: "https://www.amazon.co.jp/stores/author/B0DTTXQV2K/allbooks?_encoding=UTF8&ref_=aufs_ap_ahdr_dsk_ab&pd_rd_w=mjwOn&content-id=amzn1.sym.c8ae5043-8410-40be-b001-e431eb44a0f4&pf_rd_p=c8ae5043-8410-40be-b001-e431eb44a0f4&pf_rd_r=144-6092511-3145931&pd_rd_wg=2m7yW&pd_rd_r=6a94a0df-487d-4a9a-850c-63ac41b52831"
             },
@@ -177,7 +178,7 @@
                 title: "Aura Color Diagnosis",
                 subtitle: "オーラカラー診断",
                 desc: "心理テストと4元素で紐解く、あなたの本質。",
-                img: "https://raw.githubusercontent.com/maribon777/risa-hsp/main/assets/banner2.webp",
+                img: "https://raw.githubusercontent.com/maribon777/profile/main/assets/assets/banner2.webp",
                 fallbackTag: "DIAGNOSIS",
                 url: "https://www.reservestock.jp/page/fast_scoring/2510"
             }
@@ -190,7 +191,7 @@
                 title: "絵本制作講座", 
                 desc: "あなたも夢の絵本作家デビュー",
                 tag: "PICK UP",
-                img: "https://raw.githubusercontent.com/maribon777/risa-hsp/main/assets/affiliate1.webp", 
+                img: "https://raw.githubusercontent.com/maribon777/profile/main/assets/assets/affiliate1.webp", 
                 url: "https://tqv.jp/u/Folic/a/dOabqu6U/eSw34Lfk"
             },
             {
@@ -198,7 +199,7 @@
                 title: "デザインテンプレパック50", 
                 desc: "図解や漫画投稿も簡単",
                 tag: "PICK UP",
-                img: "https://raw.githubusercontent.com/maribon777/risa-hsp/main/assets/affiliate2.webp", 
+                img: "https://raw.githubusercontent.com/maribon777/profile/main/assets/assets/affiliate2.webp", 
                 url: "https://brmk.io/qazZ1V"
             }
         ];
@@ -208,14 +209,14 @@
             {
                 id: 'note1',
                 title: "5日間伴走型♡自己理解リーディング",
-                img: "https://raw.githubusercontent.com/maribon777/risa-hsp/main/assets/note1.webp", 
+                img: "https://raw.githubusercontent.com/maribon777/profile/main/assets/assets/note1.webp", 
                 desc: "エッセイを読む",
                 url: "https://note.com/oracle_risa_art/n/na1521311acdc"
             },
             {
                 id: 'note2',
                 title: "AIアート×自己表現入門ガイド",
-                img: "https://raw.githubusercontent.com/maribon777/risa-hsp/main/assets/note2.webp", 
+                img: "https://raw.githubusercontent.com/maribon777/profile/main/assets/assets/note2.webp", 
                 desc: "エッセイを読む",
                 url: "https://note.com/oracle_risa_art/n/n83e1c594551f"
             }
@@ -244,7 +245,6 @@
             if (e.target.nextSibling) {
                 e.target.nextSibling.style.display = 'flex';
             }
-            // Noteカードなどで代替要素がない場合は背景色などで対応（親要素のスタイル変更）
             if(e.target.parentElement.classList.contains('note-img-area')){
                 e.target.parentElement.style.background = '#e8d0d0';
             }
@@ -343,7 +343,7 @@
                                     <div className="absolute inset-[-20px] border border-[#f2e6e6] rounded-full opacity-20 animate-[spin_40s_linear_infinite_reverse]"></div>
                                     <div className="w-full h-full rounded-full overflow-hidden bg-[#fffaf8] relative hero-glow">
                                         <img 
-                                            src="https://raw.githubusercontent.com/maribon777/risa-hsp/main/assets/profile1.webp"
+                                            src="https://raw.githubusercontent.com/maribon777/profile/main/assets/assets/profile1.webp"
                                             onError={handleImgError}
                                             className="w-full h-full object-cover"
                                             alt="Risa Kawakami"
