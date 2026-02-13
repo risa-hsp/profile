@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSS型HSPのための「収入一本化」3つの地図 | 無料公開リソース</title>
+    
+    <!-- デザインを整えるためのツール（Tailwind CSS） -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- フォント（Noto Sans JP） -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- アイコン表示ツール（Lucide Icons） -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* 基本設定 */
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #FAF9F6; /* 全体の背景色：オフホワイト */
+            color: #5D5D5D; /* 基本の文字色：ダークグレー */
+        }
+        
+        /* 金色のグラデーション文字 */
+        .gradient-text {
+            background: linear-gradient(to right, #D8A7B1, #C5A059);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* 柔らかい影 */
+        .shadow-soft {
+            box-shadow: 0 10px 40px -10px rgba(216, 167, 177, 0.2);
+        }
+        
+        /* ふわふわ浮くアニメーション */
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <!-- ヘッダー -->
+    <header class="w-full py-4 px-6 fixed top-0 z-50 bg-white/90 backdrop-blur-md border-b border-[#E6DBC6]/30">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <!-- ロゴ -->
+            <div class="font-bold text-[#D8A7B1] tracking-widest text-lg">Risa.kawakami</div>
+            
+            <!-- プロフィールリンクを削除しました -->
+        </div>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <!-- 下部の余白を pb-20 から pb-12 に詰めました -->
+    <section class="relative pt-32 pb-12 px-6 overflow-hidden">
+        <!-- 背景装飾 -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-[#E8DCC4] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+        <div class="absolute top-0 left-0 w-96 h-96 bg-[#D8A7B1] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+
+        <div class="max-w-4xl mx-auto flex flex-col items-center gap-12 relative z-10 text-center">
+            
+            <!-- テキストエリア -->
+            <div class="space-y-6">
+                
+                <h1 class="text-3xl md:text-5xl font-bold leading-tight">
+                    好奇心を<span class="text-[#D8A7B1]">「殺さず」</span>に、<br>
+                    <span class="gradient-text">「迷わない軸」</span>をつくる。
+                </h1>
+                
+                <!-- 文言と改行位置の変更 -->
+                <p class="text-[#8E8E93] text-lg leading-relaxed">
+                    学びすぎて動けないHSS型HSPへ。<br>
+                    あなたの才能を「迷走」から<br>
+                    「確信」に変える 3つの「地図」を<br>
+                    無料公開しています。
+                </p>
+                
+                <!-- 「資料一覧を見る」ボタンを削除しました -->
+            </div>
+        </div>
+    </section>
+
+    <!-- リソース一覧セクション -->
+    <section id="resources" class="py-12 px-6 bg-[#FAF9F6] relative">
+        <div class="max-w-6xl mx-auto"> <!-- max-w-5xl から 6xl に広げて横幅を確保 -->
+
+            <!-- 資料1：副業迷走タイプ診断 -->
+            <div class="bg-white rounded-3xl shadow-soft border border-[#fff] mb-12 hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col md:flex-row">
+                <!-- バナー画像エリア：縦長・左側 -->
+                <!-- md:w-5/12 から md:w-7/12 (約58%) に拡大 -->
+                <div class="w-full md:w-7/12 h-64 md:h-auto relative group overflow-hidden bg-gray-100 shrink-0">
+                    <!-- ★拡張子を .webp に変更しました -->
+                    <img src="banner_1.webp" alt="副業迷走タイプ診断バナー" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-[#D8A7B1]/10 mix-blend-multiply"></div>
+                </div>
+                
+                <!-- テキストエリア：右側 -->
+                <!-- md:w-7/12 から md:w-5/12 (約42%) に縮小 -->
+                <div class="p-8 md:p-10 w-full md:w-5/12 flex flex-col justify-center">
+                    <div class="flex flex-col md:flex-row gap-6 items-start">
+                        <!-- アイコン（スマホでは非表示、PCでは表示） -->
+                        <div class="hidden md:block shrink-0">
+                             <div class="w-16 h-16 bg-[#FFF0F5] rounded-2xl flex items-center justify-center border border-[#D8A7B1]/30 text-[#D8A7B1]">
+                                <i data-lucide="compass" size="32"></i>
+                             </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
+                                <h3 class="text-xl md:text-2xl font-bold text-[#5D5D5D]">
+                                    <span class="text-[#D8A7B1] text-lg block md:inline md:text-2xl mr-2">01.</span>
+                                    副業迷走タイプ診断
+                                </h3>
+                                <span class="text-xs bg-[#FAF9F6] px-3 py-1 rounded-full text-[#8E8E93] border border-[#E6DBC6] w-fit whitespace-nowrap">Slide / PDF</span>
+                            </div>
+                            <p class="text-[#666] text-sm md:text-base leading-relaxed mb-8">
+                                「なぜ私は続かないの？」その不安の正体を5つのパターンで解説。<br class="hidden md:block">
+                                「自分の努力不足じゃなかったんだ」と、まずは自分を許すことから始めましょう。
+                            </p>
+                            
+                            <!-- ★ここに診断スライドのURLを入れてください -->
+                            <a href="#" target="_blank" class="inline-flex items-center gap-2 bg-[#D8A7B1] text-white font-bold py-3 px-8 rounded-lg hover:bg-[#c48b96] transition-colors w-full md:w-auto justify-center shadow-md">
+                                <i data-lucide="eye" size="18"></i>
+                                資料を見る
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 資料2：やらないことリスト -->
+            <div class="bg-white rounded-3xl shadow-soft border border-[#fff] mb-12 hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col md:flex-row">
+                <!-- バナー画像エリア：縦長・左側 -->
+                <!-- md:w-5/12 から md:w-7/12 に拡大 -->
+                <div class="w-full md:w-7/12 h-64 md:h-auto relative group overflow-hidden bg-gray-100 shrink-0">
+                    <!-- ★拡張子を .webp に変更しました -->
+                    <img src="banner_2.webp" alt="やらないことリストバナー" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-[#A7D8B1]/10 mix-blend-multiply"></div>
+                </div>
+
+                <!-- テキストエリア：右側 -->
+                <!-- md:w-7/12 から md:w-5/12 に縮小 -->
+                <div class="p-8 md:p-10 w-full md:w-5/12 flex flex-col justify-center">
+                    <div class="flex flex-col md:flex-row gap-6 items-start">
+                        <div class="hidden md:block shrink-0">
+                             <div class="w-16 h-16 bg-[#F0FDF4] rounded-2xl flex items-center justify-center border border-[#A7D8B1]/30 text-[#A7D8B1]">
+                                <i data-lucide="trash-2" size="32"></i>
+                             </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
+                                <h3 class="text-xl md:text-2xl font-bold text-[#5D5D5D]">
+                                    <span class="text-[#A7D8B1] text-lg block md:inline md:text-2xl mr-2">02.</span>
+                                    やらないことリスト完全版
+                                </h3>
+                                <span class="text-xs bg-[#FAF9F6] px-3 py-1 rounded-full text-[#8E8E93] border border-[#E6DBC6] w-fit whitespace-nowrap">Slide / PDF</span>
+                            </div>
+                            <p class="text-[#666] text-sm md:text-base leading-relaxed mb-8">
+                                「あれもこれも」と抱え込んだ荷物を下ろすためのチェックリスト。<br class="hidden md:block">
+                                無駄な学びやリサーチを手放し、脳のメモリを解放します。
+                            </p>
+                            
+                            <!-- ★ここにリストのURLを入れてください -->
+                            <a href="#" target="_blank" class="inline-flex items-center gap-2 bg-[#A7D8B1] text-white font-bold py-3 px-8 rounded-lg hover:bg-[#8bc496] transition-colors w-full md:w-auto justify-center shadow-md">
+                                <i data-lucide="eye" size="18"></i>
+                                資料を見る
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 資料3：最短ルート設計シート -->
+            <div class="bg-white rounded-3xl shadow-soft border border-[#fff] hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col md:flex-row">
+                <!-- バナー画像エリア：縦長・左側 -->
+                <!-- md:w-5/12 から md:w-7/12 に拡大 -->
+                <div class="w-full md:w-7/12 h-64 md:h-auto relative group overflow-hidden bg-gray-100 shrink-0">
+                    <!-- ★拡張子を .webp に変更しました -->
+                    <img src="banner_3.webp" alt="最短ルート設計シートバナー" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-[#C5A059]/10 mix-blend-multiply"></div>
+                </div>
+
+                <!-- テキストエリア：右側 -->
+                <!-- md:w-7/12 から md:w-5/12 に縮小 -->
+                <div class="p-8 md:p-10 w-full md:w-5/12 flex flex-col justify-center">
+                    <div class="flex flex-col md:flex-row gap-6 items-start">
+                        <div class="hidden md:block shrink-0">
+                             <div class="w-16 h-16 bg-[#FFF8E1] rounded-2xl flex items-center justify-center border border-[#C5A059]/30 text-[#C5A059]">
+                                <i data-lucide="map" size="32"></i>
+                             </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
+                                <h3 class="text-xl md:text-2xl font-bold text-[#5D5D5D]">
+                                    <span class="text-[#C5A059] text-lg block md:inline md:text-2xl mr-2">03.</span>
+                                    最短ルート設計シート
+                                </h3>
+                                <span class="text-xs bg-[#FAF9F6] px-3 py-1 rounded-full text-[#8E8E93] border border-[#E6DBC6] w-fit whitespace-nowrap">Slide / PDF</span>
+                            </div>
+                            <p class="text-[#666] text-sm md:text-base leading-relaxed mb-8">
+                                好奇心を分散させたまま、収入源だけを太くする「2階建てキャリア」の設計図。<br class="hidden md:block">
+                                自分だけの成功ルートを見つけるための地図です。
+                            </p>
+                            
+                            <!-- ★ここに設計シートのURLを入れてください -->
+                            <a href="#" target="_blank" class="inline-flex items-center gap-2 bg-[#C5A059] text-white font-bold py-3 px-8 rounded-lg hover:bg-[#b08d4b] transition-colors w-full md:w-auto justify-center shadow-md">
+                                <i data-lucide="eye" size="18"></i>
+                                資料を見る
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <section class="py-12 px-6 bg-white border-t border-[#E6DBC6]/30">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-xs text-[#8E8E93] mb-6">CREATED BY</p>
+            <div class="flex flex-col items-center gap-4">
+                
+                <!-- プロフィール画像の枠 -->
+                <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-[#E6DBC6] shadow-sm">
+                    <!-- ★プロフィール画像を profile1.webp に指定しました -->
+                    <img src="profile1.webp" alt="Risa" class="w-full h-full object-cover">
+                </div>
+
+                <div>
+                    <!-- ★文字色を茶色に変更しました -->
+                    <h4 class="font-bold text-[#8B5A2B]">Risa | HSS型HSPの静かな自己表現</h4>
+                    <!-- 文言と改行位置の変更 -->
+                    <p class="text-xs text-[#8E8E93] mt-2 max-w-lg mx-auto leading-relaxed">
+                        これらの資料が同じ気質を持つあなたの安心と<br>
+                        「前進」のきっかけになれば幸いです。<br>
+                        内容が役に立ったら、ぜひSNSなどで<br>
+                        感想を教えてくださいね。
+                    </p>
+                </div>
+                <div class="mt-4 flex gap-4">
+                    <a href="https://risa-hsp.github.io/profile/" target="_blank" class="text-xs font-bold text-[#D8A7B1] hover:underline flex items-center gap-1">
+                        ポートフォリオを見る <i data-lucide="arrow-right" size="12"></i>
+                    </a>
+                </div>
+            </div>
+            <p class="text-[10px] text-[#D1D1D1] mt-10">&copy; 2026 Risa. All Rights Reserved.</p>
+        </div>
+    </section>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
