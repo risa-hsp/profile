@@ -126,6 +126,18 @@
   .heart-link{display:block;text-align:center;color:var(--gold);font-size:12px;text-decoration:underline;margin-top:10px;line-height:1.8}
 
   .footer{text-align:center;padding:20px;font-size:10px;color:var(--tx3)}
+
+  /* Before/After text card */
+  .ba-text-card{background:white;border-radius:var(--r);padding:18px 16px;margin-bottom:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);border:1px solid rgba(196,162,101,.1)}
+  .ba-text-block{padding:14px 14px;border-radius:var(--rs)}
+  .ba-text-block.ba-before{background:#f5f0e8;border:1px solid rgba(196,162,101,.18)}
+  .ba-text-block.ba-after{background:var(--mint-light);border:1px solid var(--mint)}
+  .ba-text-label{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:600;letter-spacing:2px;margin-bottom:6px}
+  .ba-text-block.ba-before .ba-text-label{color:var(--tx3)}
+  .ba-text-block.ba-after .ba-text-label{color:#4d8f82}
+  .ba-text-block p{font-size:12px;color:var(--tx2);line-height:1.9;margin:0}
+  .ba-text-block.ba-after p{color:var(--tx)}
+  .ba-text-arrow{text-align:center;color:var(--gold);font-size:18px;line-height:1;margin:8px 0}
 </style>
 </head>
 <body>
@@ -173,6 +185,30 @@
 
 <div class="div"></div>
 
+<!-- BEFORE/AFTER TEXT -->
+<div style="padding:0 16px 20px">
+  <div class="ba-text-card">
+    <div class="ba-text-block ba-before">
+      <div class="ba-text-label">Before</div>
+      <p>
+        「投稿しても反応がない」<br>
+        「自分のサービスを言葉にできない」<br>
+        頭の中はぐちゃぐちゃ、<br>
+        発信するたびに自信が削られる毎日
+      </p>
+    </div>
+    <div class="ba-text-arrow">↓</div>
+    <div class="ba-text-block ba-after">
+      <div class="ba-text-label">After</div>
+      <p>
+        「これが私の伝えたいことだ」と 言い切れる<br>
+        発信すると、 共感する人から反応が届く<br>
+        世界観が揃って、 投稿するのが楽しくなる
+      </p>
+    </div>
+  </div>
+</div>
+
 <!-- PACK -->
 <div class="pack-wrap">
   <div class="pack">
@@ -215,6 +251,7 @@
     </div>
     <p class="sample-note">複雑な内容も、一目で理解できる形にします</p>
   </div>
+
 
   <!-- LINEスタンプ -->
   <div class="sample-card">
@@ -259,7 +296,7 @@
     <p>転職を繰り返し、夫の海外駐在で<br>専業主婦になってからは人間関係に疲弊。</p>
     <p>「このまま終わりたくない」と思い<br>起業塾をハシゴ。貯金も使い切りました。</p>
     <div style="background:var(--mint-light);border:1px solid var(--mint);border-radius:8px;padding:14px 16px;margin:12px 0">
-      <p style="color:var(--mint-dark);font-weight:700;font-size:12px;margin-bottom:0;line-height:2">そんな中で気づいたのは、問題は<br>「努力不足」ではなく「伝え方」と<br>「自分の扱い方」だったんです。</p>
+      <p style="color:#4d8f82;font-weight:700;font-size:12px;margin-bottom:0;line-height:2">そんな中で気づいたのは、問題は<br>「努力不足」ではなく「伝え方」と<br>「自分の扱い方」だったんです。</p>
     </div>
     <p>弱さだと思っていたものは、<br>ちゃんと活かせば強みになる。<br><br>だから今は、言葉にできない想いや<br>思考を「伝わる形」に整えるサポートをしています。</p>
   </div>
@@ -281,6 +318,20 @@
 </div>
 
 <div class="div"></div>
+
+<!-- CAPACITY NOTE -->
+<div style="margin:0 16px 16px;padding:16px 18px;background:var(--mint-light);border:1px solid var(--mint);border-radius:var(--rs);text-align:left">
+  <p style="font-size:12px;color:var(--tx2);line-height:2;margin:0">
+    🌙 丁寧に一人ひとり向き合うため、<br>
+    月に<span style="color:var(--mint-dark);font-weight:700">3〜4名さま</span>を目安にお受けしています。<br>
+    <span style="font-size:11px;color:var(--tx3)">（制作時間をしっかり確保するため）</span>
+  </p>
+  <div style="height:10px"></div>
+  <p style="font-size:12px;color:var(--tx2);line-height:1.9;margin:0">
+    ご相談いただいた順にお返事していますので、<br>
+    気になったタイミングで、 お気軽にお声がけください。
+  </p>
+</div>
 
 <!-- CONTACT -->
 <div class="sec" id="contact" style="padding-top:0">
