@@ -585,6 +585,123 @@
   .stamp-title { font-family: var(--serif); font-size: 16px; font-weight: 400; margin-bottom: 10px; color: var(--text); }
   .stamp-desc { font-size: 13px; color: var(--text-sub); line-height: 1.9; margin-bottom: 22px; font-weight: 300; }
 
+  /* FV btn-sub */
+  .btn-sub { font-size: 11px; font-weight: 300; letter-spacing: 0.08em; opacity: 0.85; }
+
+  /* Why text */
+  .why-text {
+    font-size: 14px;
+    color: var(--text-sub);
+    line-height: 2.1;
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+  .why-text em { font-style: normal; color: var(--text); font-weight: 400; }
+
+  /* Story section */
+  .story-sec { background: var(--bg-soft); }
+  .story-body { margin-top: 8px; }
+  .story-text {
+    font-size: 14px;
+    color: var(--text-sub);
+    line-height: 2.1;
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+  .story-text em { font-style: normal; color: var(--text); font-weight: 400; }
+  .story-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+  }
+  .story-list li {
+    font-size: 14px;
+    color: var(--text-sub);
+    line-height: 2;
+    padding-left: 1.2em;
+    position: relative;
+    font-weight: 300;
+  }
+  .story-list li::before {
+    content: '・';
+    position: absolute;
+    left: 0;
+    color: var(--sage);
+  }
+
+  /* Before / After section */
+  .ba-sec { background: var(--bg); }
+  .ba-table {
+    margin-top: 28px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .ba-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .ba-header {
+    background: var(--bg-soft);
+  }
+  .ba-before, .ba-after {
+    padding: 14px 16px;
+    font-size: 13px;
+    line-height: 1.7;
+    border-bottom: 1px solid var(--border);
+  }
+  .ba-header .ba-before,
+  .ba-header .ba-after {
+    font-family: var(--accent);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--text-sub);
+    text-align: center;
+    font-weight: 400;
+    border-bottom: 1px solid var(--border);
+  }
+  .ba-before {
+    color: var(--text-sub);
+    font-weight: 300;
+    border-right: 1px solid var(--border);
+    background: #faf9f7;
+  }
+  .ba-after {
+    color: var(--text);
+    font-weight: 400;
+    background: #f4f7f5;
+  }
+  .ba-row:last-child .ba-before,
+  .ba-row:last-child .ba-after { border-bottom: none; }
+  .ba-closing {
+    margin-top: 28px;
+    font-size: 14px;
+    color: var(--text-sub);
+    line-height: 2.1;
+    text-align: center;
+    font-weight: 300;
+  }
+  .ba-closing em { font-style: normal; color: var(--text); font-weight: 400; }
+
+  /* Closing section */
+  .closing-sec { background: var(--bg-soft); text-align: center; }
+  .closing-text {
+    font-family: var(--serif);
+    font-size: clamp(17px, 4.5vw, 22px);
+    color: var(--text);
+    line-height: 1.9;
+    font-weight: 400;
+    margin-bottom: 28px;
+  }
+  .closing-text em { font-style: normal; color: var(--sage); }
+  .closing-sub {
+    font-size: 14px;
+    color: var(--text-sub);
+    line-height: 2.2;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+  }
+
   /* Books banner */
   .books-sec { background: var(--bg); padding: 48px 0; }
   .books-banner-link { display: block; }
@@ -645,28 +762,15 @@
   </div>
   <div class="fv-cta">
     <a href="https://www.reservestock.jp/subscribe/321101" class="btn-primary" target="_blank" rel="noopener">
-      自分の感覚を、少し整理してみる <span class="btn-arrow">→</span>
+      自分の感覚を、少し整理してみる🌿<br><span class="btn-sub">（無料レターを受け取る）</span>
     </a>
-  </div>
-</section>
-
-<section class="sec raw-voice">
-  <div class="wrap">
-    <div class="raw-voice-inner fade-in">
-      <p class="raw-voice-quote">
-        「本当はもう、誰かの正解を<br>
-        追いかけるのに疲れていました。」
-      </p>
-      <p class="raw-voice-question">
-        そう思ったことは、ありませんか？
-      </p>
-    </div>
   </div>
 </section>
 
 <section class="sec feelings">
   <div class="wrap">
-    <p class="feelings-lead fade-in">ひとりで静かに、抱え込んでいませんか？</p>
+    <span class="sec-label fade-in">◦ こんな感覚ありませんか？ ◦</span>
+    <p class="feelings-lead fade-in">ひとりで静かに、<br>抱え込んでいませんか？</p>
     <div class="feelings-list">
       <div class="feeling-item fade-in">
         <div class="feeling-check"></div>
@@ -688,86 +792,147 @@
         <div class="feeling-check"></div>
         <p class="feeling-text">周りに合わせすぎて、自分の「好き」がどこにあるか分からなくなった</p>
       </div>
+      <div class="feeling-item fade-in">
+        <div class="feeling-check"></div>
+        <p class="feeling-text">"ちゃんとしなきゃ" を続けるほど、何もできなくなる</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="sec why">
   <div class="wrap">
+    <span class="sec-label fade-in">◦ なぜ苦しくなるのか ◦</span>
+    <h2 class="content-title fade-in">あなたが弱いからではなく、<br>感覚と環境がズレているだけかもしれません</h2>
+    <p class="why-text fade-in">
+      HSS型HSPさんは、<br>
+      「頑張りたい」気持ちがある一方で、<br>
+      小さな違和感にも、とても敏感です。<br><br>
+      そのため、「世間の正解」や「合わない型」に<br>
+      自分を合わせ続けると、<br>
+      心より先に、体がストップしてしまうことがあります。<br><br>
+      頑張れなかったのではなく、<br>
+      ずっと、<em>"自分の感覚"を後回しにしてきただけ。</em><br><br>
+      理由が分かると、少しずつ、<br>
+      "自分に合うペース"へ戻っていくことができます🌿
+    </p>
     <div class="why-img fade-in">
       <img src="images/why_new.webp" alt="あなたが弱いからではなく、感覚と環境がズレているだけかもしれません" class="why-img-el">
     </div>
   </div>
 </section>
 
-<section class="sec service">
+<section class="sec story-sec">
   <div class="wrap">
-    <p class="service-lead fade-in">あなたの現在地を紐解く「感覚整理・自己理解セッション」</p>
-    <p class="service-sub fade-in">もつれてしまったあなたの感覚を、以下の5つの視点から具体的に整理していきます。</p>
-    <div class="service-cards">
-      <div class="service-card fade-in">
-        <div class="service-card-num">1</div>
-        <div class="service-card-body">
-          <p class="service-card-title">思考のクセ</p>
-          <p class="service-card-desc">無意識に自分を後回しにしてしまう原因</p>
-        </div>
+    <span class="sec-label fade-in">◦ わたしのこと ◦</span>
+    <h2 class="content-title fade-in">私も、ずっと「頑張り方」を<br>間違えていました。</h2>
+    <div class="story-body fade-in">
+      <p class="story-text">
+        起業塾をいくつも渡り歩きながら、<br>
+        「もっと頑張らなきゃ」と思っていました。
+      </p>
+      <p class="story-text">
+        毎日投稿。交流。売れそうなテーマ。<br>
+        言われた通りに頑張るほど、どんどん苦しくなっていったんです。
+      </p>
+      <p class="story-text">
+        気づけば、「好き」まで分からなくなっていました。
+      </p>
+      <p class="story-text">
+        でも問題は、努力不足じゃなかった。<br>
+        自分の感覚を置き去りにしたまま、<br>
+        誰かの型に合わせようとしていたことでした。
+      </p>
+      <p class="story-text">
+        そこから少しずつ、
+      </p>
+      <ul class="story-list">
+        <li>無理なやり方をやめる</li>
+        <li>感覚を整理する</li>
+        <li>自分に合う形を探す</li>
+      </ul>
+      <p class="story-text">
+        ことを始めて、<br>
+        今は、<em>"無理しない形"</em>で発信や活動を続けています🌙
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="sec ba-sec">
+  <div class="wrap">
+    <span class="sec-label fade-in">◦ before / after ◦</span>
+    <h2 class="content-title fade-in">「無理に頑張る形」から、<br>「自分に合う形」へ</h2>
+    <div class="ba-table fade-in">
+      <div class="ba-row ba-header">
+        <div class="ba-before">Before</div>
+        <div class="ba-after">After</div>
       </div>
-      <div class="service-card fade-in">
-        <div class="service-card-num">2</div>
-        <div class="service-card-body">
-          <p class="service-card-title">無理しやすい環境</p>
-          <p class="service-card-desc">あなたが疲れてしまう人間関係や働き方のパターン</p>
-        </div>
+      <div class="ba-row">
+        <div class="ba-before">毎日投稿しなきゃ</div>
+        <div class="ba-after">書きたい時に、静かに書く</div>
       </div>
-      <div class="service-card fade-in">
-        <div class="service-card-num">3</div>
-        <div class="service-card-body">
-          <p class="service-card-title">本来のペース</p>
-          <p class="service-card-desc">心と体が一番ラクに動く活動サイクル</p>
-        </div>
+      <div class="ba-row">
+        <div class="ba-before">バズらなきゃ</div>
+        <div class="ba-after">1人の人に、深く届く言葉</div>
       </div>
-      <div class="service-card fade-in">
-        <div class="service-card-num">4</div>
-        <div class="service-card-body">
-          <p class="service-card-title">感性の使い方</p>
-          <p class="service-card-desc">深い感受性を強みに変える方法</p>
-        </div>
+      <div class="ba-row">
+        <div class="ba-before">売れそうな強みを探す</div>
+        <div class="ba-after">自分の感覚で選ぶ</div>
       </div>
-      <div class="service-card fade-in">
-        <div class="service-card-num">5</div>
-        <div class="service-card-body">
-          <p class="service-card-title">発信しんどさの原因</p>
-          <p class="service-card-desc">なぜSNSを書こうとすると止まってしまうのかの理由</p>
-        </div>
+      <div class="ba-row">
+        <div class="ba-before">誰かの正解を追いかける</div>
+        <div class="ba-after">自分のペースで静かに続ける</div>
+      </div>
+      <div class="ba-row">
+        <div class="ba-before">頑張っても止まる</div>
+        <div class="ba-after">無理しなくても言葉が出てくる</div>
       </div>
     </div>
-    <p class="service-closing fade-in">
-      「何が向いているか」より先に、「何が苦しかったのか」を整理することで、<br>
-      少しずつ、<em>"自分の感覚"を信じやすく</em>なっていきます🌿
+    <p class="ba-closing fade-in">
+      "もっと頑張る"ではなく、<br>
+      <em>"合わない形を減らす"</em>ことで、<br>
+      少しずつ、また動けるようになることがあります🌿
     </p>
   </div>
 </section>
 
 <section class="sec line-sec">
   <div class="wrap">
-    <p class="line-sec-lead fade-in">
-      まずは、「自分の感覚を<br>後回しにしない」ところから🌿
-    </p>
     <div class="line-card fade-in">
       <img src="images/mailmag_banner.webp" alt="HSS型HSPのための感覚整理レター メルマガ登録" class="mailmag-banner">
       <div class="line-card-body">
         <h2 class="line-card-title">HSS型HSP向け 感覚整理レター🌿</h2>
         <p class="line-card-desc">
-          「頑張っているのに苦しい」を、<br>
-          静かに整理するヒントを届けています。<br>
-          深夜にふっと力を抜いて読めるような、<br>
-          優しいメッセージです。
+          感覚整理レターでは、<br>
+          ・なぜ頑張るほど苦しくなるのか<br>
+          ・なぜ発信しようとすると止まるのか<br>
+          ・なぜ"好き"まで分からなくなるのか<br><br>
+          その"もつれ"を、少しずつほどくヒントを届けています。<br><br>
+          読み終わったあと、<br>
+          「あ、私はダメだったんじゃなくて、<br>
+          ずっと無理していただけかもしれない」<br>
+          そんなふうに、少し呼吸しやすくなるようなレターです🌙
         </p>
         <a href="https://www.reservestock.jp/subscribe/321101" class="btn-line" target="_blank" rel="noopener">
           感覚整理レターを受け取る🌿（無料）<span class="btn-arrow">→</span>
         </a>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="sec closing-sec">
+  <div class="wrap">
+    <p class="closing-text fade-in">
+      頑張れなかったんじゃない。<br>
+      ずっと、<em>"感覚"を後回しにしてきただけかもしれません。</em>
+    </p>
+    <p class="closing-sub fade-in">
+      まずは、<br>
+      「わたしを置き去りにしない」<br>
+      ところから🌿
+    </p>
   </div>
 </section>
 
