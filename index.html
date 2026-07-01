@@ -12,861 +12,299 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>川上 りさ｜HSS型HSPの感覚整理・自己理解</title>
-<meta name="description" content="頑張るほど苦しくなる。人に合わせすぎて、自分の本音が分からなくなる。そんなHSS型HSPさんの感覚を整理しながら、発信・働き方・自己表現を自分に合う形へ整えています。">
+<meta name="description" content="人といると疲れる。頑張っているのに苦しい。それはあなたの特性に合わない頑張り方かもしれません。まずは1分で分かるHSPタイプ診断から始めてみませんか？">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg:        #F7F5F2;
-    --bg-card:   #FFFFFF;
-    --bg-soft:   #F0EDE8;
-    --sage:      #B8C4B2;
-    --sage-light:#D4DDD0;
-    --mist:      #AEBCC3;
-    --mist-light:#CDD8DF;
-    --gold:      #D8C6A5;
-    --gold-light:#EAE0CE;
-    --text:      #3F3A37;
-    --text-sub:  #7A7470;
-    --text-pale: #A89E9A;
-    --border:    #E5E0D8;
-    --shadow:    0 4px 24px rgba(63,58,55,0.06);
-    --shadow-sm: 0 2px 10px rgba(63,58,55,0.05);
-    --serif:     'Noto Serif JP', serif;
-    --sans:      'Noto Sans JP', sans-serif;
-    --accent:    'Klee One', cursive;
+    --bg:       #F7F5F2;
+    --bg-soft:  #F2EEE9;
+    --bg-card:  #FDFCFB;
+    --sage:     #B8C4B2;
+    --mist:     #AEBCC3;
+    --gold:     #D8C6A5;
+    --text:     #3F3A37;
+    --text-sub: #7A7470;
+    --border:   rgba(63,58,55,0.1);
+    --shadow:   0 4px 20px rgba(63,58,55,0.08);
+    --shadow-sm:0 2px 8px rgba(63,58,55,0.06);
+    --serif:    'Noto Serif JP', serif;
+    --accent:   'Cormorant Garamond', serif;
+    --radius:   20px;
   }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: var(--sans);
     background: var(--bg);
     color: var(--text);
-    line-height: 2;
-    font-size: 15px;
-    font-weight: 300;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-
-  /* ─── Scroll fade-in ─── */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ─── Layout ─── */
-  .wrap {
-    max-width: 480px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
-  /* ─── Section common ─── */
-  .sec {
-    padding: 48px 0;
-    position: relative;
-  }
-  .sec-num {
-    font-family: var(--accent);
-    font-size: 11px;
-    color: var(--text-pale);
-    letter-spacing: 0.25em;
-    display: block;
-    margin-bottom: 6px;
-  }
-  .sec-label {
-    font-family: var(--accent);
-    font-size: 12px;
-    color: var(--mist);
-    letter-spacing: 0.2em;
-    display: block;
-    margin-bottom: 24px;
-  }
-
-  /* ─────────────────────────────────────
-     01 FV
-  ───────────────────────────────────── */
-  .fv {
-    padding: 0;
-    background: var(--bg);
-  }
-  .fv-image-wrap {
-    width: 100%;
-    overflow: hidden;
-  }
-  .fv-image-wrap img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  .fv-cta {
-    padding: 28px 24px 36px;
-    max-width: 480px;
-    margin: 0 auto;
-    width: 100%;
-    box-sizing: border-box;
-  }
-  .fv-tag {
-    font-family: var(--accent);
-    font-size: 11px;
-    color: var(--mist);
-    letter-spacing: 0.25em;
-    margin-bottom: 20px;
-    display: block;
-  }
-  .fv-headline {
     font-family: var(--serif);
-    font-size: clamp(26px, 7vw, 34px);
-    font-weight: 400;
-    line-height: 1.55;
-    color: var(--text);
-    margin-bottom: 28px;
-    letter-spacing: 0.03em;
-  }
-  .fv-headline em {
-    font-style: normal;
-    color: var(--text-sub);
-    font-size: 0.88em;
-  }
-  .fv-desc {
-    font-size: 13.5px;
-    color: var(--text-sub);
-    line-height: 2.1;
-    margin-bottom: 36px;
-    font-weight: 300;
-  }
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    padding: 17px 24px;
-    background: var(--sage);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 999px;
-    font-family: var(--sans);
-    font-weight: 400;
     font-size: 14px;
-    letter-spacing: 0.08em;
-    transition: background 0.3s, transform 0.2s;
-  }
-  .btn-primary:hover {
-    background: #9aaf93;
-    transform: scale(1.02);
-  }
-  .btn-arrow { font-size: 13px; opacity: 0.8; }
-
-  /* ─────────────────────────────────────
-     02 本音ゾーン
-  ───────────────────────────────────── */
-  .raw-voice {
-    background: var(--bg-soft);
-    padding: 48px 0;
-  }
-  .raw-voice-inner {
-    text-align: center;
-    padding: 0 8px;
-  }
-  .raw-voice-quote {
-    font-family: var(--serif);
-    font-size: clamp(15px, 3.8vw, 19px);
-    font-weight: 400;
-    color: var(--text);
-    line-height: 1.9;
-    margin-bottom: 28px;
-    position: relative;
-    letter-spacing: 0.04em;
-  }
-  .raw-voice-quote::before {
-    content: '';
-    display: block;
-    width: 32px;
-    height: 1px;
-    background: var(--gold);
-    margin: 0 auto 28px;
-  }
-  .raw-voice-question {
-    font-size: 13.5px;
-    color: var(--text-sub);
-    letter-spacing: 0.05em;
-  }
-
-  /* ─────────────────────────────────────
-     03 こんな感覚
-  ───────────────────────────────────── */
-  .feelings {}
-  .feelings-lead {
-    font-family: var(--serif);
-    font-size: 17px;
-    font-weight: 400;
-    color: var(--text);
-    margin-bottom: 36px;
-    line-height: 1.7;
-  }
-  .feelings-lead::before {
-    content: '◆';
-    color: var(--sage);
-    margin-right: 8px;
-    font-size: 12px;
-    vertical-align: 2px;
-  }
-  .feelings-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .feeling-item {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 18px 20px;
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    box-shadow: var(--shadow-sm);
-  }
-  .feeling-check {
-    width: 20px;
-    height: 20px;
-    min-width: 20px;
-    border-radius: 50%;
-    background: var(--mist-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2px;
-  }
-  .feeling-check::after {
-    content: '✓';
-    font-size: 10px;
-    color: var(--mist);
-    font-weight: 500;
-  }
-  .feeling-text {
-    font-size: 14px;
-    color: var(--text);
     line-height: 1.8;
-    font-weight: 300;
-  }
-  .feelings-punchline {
-    margin-top: 32px;
-    font-family: var(--serif);
-    font-size: clamp(16px, 4.2vw, 20px);
-    color: var(--text);
-    line-height: 1.9;
-    text-align: center;
-    font-weight: 400;
-  }
-  .feelings-punchline em {
-    font-style: normal;
-    color: var(--mist);
+    -webkit-font-smoothing: antialiased;
   }
 
-  /* ─────────────────────────────────────
-     04 なぜ苦しくなるのか
-  ───────────────────────────────────── */
-  .why {
-    background: var(--bg-soft);
-  }
-  .why-lead {
-    font-family: var(--serif);
-    font-size: 17px;
-    font-weight: 400;
-    color: var(--text);
-    margin-bottom: 32px;
-    line-height: 1.65;
-  }
-  .why-lead::before {
-    content: '◆';
-    color: var(--sage);
-    margin-right: 8px;
-    font-size: 12px;
-    vertical-align: 2px;
-  }
-  .why-body {
-    font-size: 14px;
-    color: var(--text-sub);
-    line-height: 2.1;
-    margin-bottom: 20px;
-  }
-  .why-highlight {
-    font-family: var(--serif);
-    color: var(--text);
-    font-weight: 400;
-  }
-  .why-closing {
-    background: var(--bg-card);
-    border-left: 3px solid var(--sage);
-    border-radius: 0 12px 12px 0;
-    padding: 20px 22px;
-    font-size: 14px;
-    color: var(--text);
-    line-height: 2;
-    font-weight: 300;
-  }
+  .wrap { max-width: 480px; margin: 0 auto; padding: 0 24px; }
+  .sec { padding: 52px 0; }
+  .sec-alt { background: var(--bg-soft); }
 
-  .why-img { margin-top: 28px; }
-  .why-img-el {
-    width: 100%;
-    height: auto;
+  .sec-label {
     display: block;
-    border-radius: 16px;
-    box-shadow: var(--shadow);
-  }
-
-
-  /* ─────────────────────────────────────
-     06 サービス
-  ───────────────────────────────────── */
-  .service {
-    background: var(--bg-soft);
-  }
-  .service-lead {
-    font-family: var(--serif);
-    font-size: 17px;
-    font-weight: 400;
-    color: var(--text);
-    margin-bottom: 12px;
-    line-height: 1.65;
-  }
-  .service-lead::before {
-    content: '◆';
-    color: var(--sage);
-    margin-right: 8px;
-    font-size: 12px;
-    vertical-align: 2px;
-  }
-  .service-sub {
-    font-size: 13.5px;
-    color: var(--text-sub);
-    margin-bottom: 36px;
-    line-height: 1.9;
-    font-weight: 300;
-  }
-  .service-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-bottom: 32px;
-  }
-  .service-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 20px 22px;
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    box-shadow: var(--shadow-sm);
-  }
-  .service-card-num {
-    width: 32px;
-    height: 32px;
-    min-width: 32px;
-    border-radius: 50%;
-    background: var(--mist-light);
-    color: var(--mist);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-family: var(--accent);
-    font-size: 13px;
-    font-weight: 600;
-    margin-top: 1px;
-  }
-  .service-card-body {}
-  .service-card-title {
-    font-family: var(--serif);
-    font-size: 15px;
-    font-weight: 400;
-    color: var(--text);
-    margin-bottom: 6px;
-    line-height: 1.5;
-  }
-  .service-card-desc {
-    font-size: 12.5px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
     color: var(--text-sub);
-    line-height: 1.9;
-    font-weight: 300;
-  }
-  .service-closing {
-    font-size: 13.5px;
-    color: var(--text-sub);
-    line-height: 2.1;
-    font-weight: 300;
-  }
-  .service-closing em {
-    font-style: normal;
-    color: var(--text);
-    font-weight: 400;
-  }
-
-  /* ─────────────────────────────────────
-     07 LINE導線
-  ───────────────────────────────────── */
-  .line-sec { padding: 64px 0; }
-  .line-sec-lead {
-    font-family: var(--serif);
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--text);
-    text-align: center;
-    margin-bottom: 36px;
-    line-height: 1.7;
-    letter-spacing: 0.03em;
-  }
-  .line-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    text-align: center;
-  }
-  .line-card-body {
-    padding: 28px 28px 36px;
-  }
-  .line-card-title {
-    font-family: var(--serif);
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--text);
     margin-bottom: 16px;
-    line-height: 1.6;
-  }
-  .line-card-desc {
-    font-size: 13px;
-    color: var(--text-sub);
-    line-height: 2;
-    margin-bottom: 28px;
-    font-weight: 300;
     text-align: center;
   }
-  .mailmag-banner {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  .btn-line {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    padding: 17px 24px;
-    background: var(--gold);
-    color: var(--text);
-    text-decoration: none;
-    border-radius: 999px;
-    font-family: var(--sans);
-    font-weight: 400;
-    font-size: 14px;
-    letter-spacing: 0.08em;
-    transition: background 0.3s, transform 0.2s;
-  }
-  .btn-line:hover {
-    background: #c9b494;
-    transform: scale(1.02);
-  }
 
-  /* ─────────────────────────────────────
-     Content sections (note/Kindle/etc.)
-  ───────────────────────────────────── */
-  .divider {
-    width: 40px;
-    height: 1px;
-    background: var(--border);
-    margin: 0 auto;
-  }
-
-  /* note */
-  .note-sec {
-    background: var(--bg);
-  }
   .content-title {
     font-family: var(--serif);
-    font-size: 18px;
+    font-size: clamp(20px, 5.5vw, 26px);
     font-weight: 400;
-    color: var(--text);
-    margin-bottom: 32px;
-    text-align: center;
     line-height: 1.6;
+    color: var(--text);
+    margin-bottom: 24px;
+    text-align: center;
   }
-  .note-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
-  .note-card {
-    display: block;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 20px 22px;
-    text-decoration: none;
-    color: inherit;
-    box-shadow: var(--shadow-sm);
-    transition: all 0.3s ease;
-  }
-  .note-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-  .note-card-label { font-size: 11px; color: var(--mist); letter-spacing: 0.1em; margin-bottom: 8px; display: block; font-family: var(--accent); }
-  .note-card-title { font-family: var(--serif); font-size: 15px; font-weight: 400; color: var(--text); line-height: 1.7; margin-bottom: 10px; }
-  .note-card-arrow { font-size: 12px; color: var(--text-pale); }
-  .link-more { text-align: center; }
-  .link-more a { color: var(--text-sub); font-size: 13px; text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 2px; transition: all 0.3s; }
-  .link-more a:hover { color: var(--sage); border-color: var(--sage); }
 
-  /* Kindle */
-  .kindle-sec { background: var(--bg-soft); }
-  .kindle-intro { font-size: 13px; color: var(--text-sub); line-height: 2; text-align: center; margin-bottom: 32px; font-weight: 300; }
-  .kindle-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 24px; }
-  .kindle-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 10px;
-    text-decoration: none;
-    color: inherit;
-    box-shadow: var(--shadow-sm);
-    transition: all 0.3s;
-    display: flex;
-    flex-direction: column;
+  /* FV */
+  .fv { padding: 0; background: var(--bg); }
+  .fv-img-wrap { width: 100%; overflow: hidden; }
+  .fv-img-wrap img { width: 100%; height: auto; display: block; }
+  .fv-cta { padding: 32px 24px 40px; max-width: 480px; margin: 0 auto; text-align: center; }
+  .fv-lead {
+    font-size: 13px; color: var(--text-sub); line-height: 2;
+    margin-bottom: 28px; font-weight: 300;
   }
-  .kindle-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-  .kindle-card-cover { aspect-ratio: 3/4; border-radius: 8px; overflow: hidden; background: var(--bg-soft); margin-bottom: 10px; }
-  .kindle-card-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .kindle-card-badge {
-    display: inline-block;
-    font-size: 9px;
-    color: white;
-    background: var(--sage);
-    padding: 2px 8px;
-    border-radius: 999px;
-    margin-bottom: 6px;
-    letter-spacing: 0.05em;
-    align-self: flex-start;
-    font-family: var(--accent);
-  }
-  .kindle-card-title { font-family: var(--serif); font-size: 11px; font-weight: 400; color: var(--text); line-height: 1.6; }
 
-  /* Services deeper */
-  .deeper-sec { background: var(--bg); }
-  .deeper-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 26px 24px;
-    margin-bottom: 14px;
-    box-shadow: var(--shadow-sm);
-    transition: all 0.3s;
+  /* ボタン */
+  .btn-main {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 100%; padding: 18px 24px; background: var(--text); color: #fff;
+    text-decoration: none; border-radius: 50px; font-family: var(--serif);
+    font-size: 15px; font-weight: 400; letter-spacing: 0.06em; gap: 4px;
+    transition: opacity 0.2s;
   }
-  .deeper-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-  .deeper-card-icon { font-size: 22px; margin-bottom: 10px; }
-  .deeper-card-title { font-family: var(--serif); font-size: 16px; font-weight: 400; margin-bottom: 10px; color: var(--text); }
-  .deeper-card-desc { font-size: 13px; color: var(--text-sub); line-height: 1.9; margin-bottom: 18px; font-weight: 300; }
+  .btn-main:hover { opacity: 0.85; }
+  .btn-main-sub { font-size: 11px; font-weight: 300; opacity: 0.75; letter-spacing: 0.08em; }
+
+  .btn-sage {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 100%; padding: 18px 24px; background: var(--sage); color: #fff;
+    text-decoration: none; border-radius: 50px; font-family: var(--serif);
+    font-size: 15px; font-weight: 400; letter-spacing: 0.06em; gap: 4px;
+    transition: opacity 0.2s;
+  }
+  .btn-sage:hover { opacity: 0.85; }
+
   .btn-outline {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    padding: 14px 24px;
-    background: transparent;
-    color: var(--text-sub);
-    border: 1px solid var(--border);
-    text-decoration: none;
-    border-radius: 999px;
-    font-size: 13px;
-    letter-spacing: 0.06em;
-    transition: all 0.3s;
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; padding: 16px 24px; border: 1.5px solid var(--text);
+    color: var(--text); text-decoration: none; border-radius: 50px;
+    font-family: var(--serif); font-size: 14px; font-weight: 400;
+    letter-spacing: 0.06em; transition: all 0.2s;
   }
-  .btn-outline:hover { border-color: var(--sage); color: var(--sage); }
+  .btn-outline:hover { background: var(--text); color: #fff; }
 
-  /* LINE stamp */
-  .stamp-sec { background: var(--bg-soft); }
-  .stamp-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 28px 24px; text-align: center; box-shadow: var(--shadow-sm); }
-  .stamp-images { display: flex; justify-content: center; gap: 14px; margin-bottom: 18px; flex-wrap: wrap; }
-  .stamp-images img { width: 100px; height: auto; border-radius: 10px; background: var(--bg-soft); padding: 6px; }
-  .stamp-title { font-family: var(--serif); font-size: 16px; font-weight: 400; margin-bottom: 10px; color: var(--text); }
-  .stamp-desc { font-size: 13px; color: var(--text-sub); line-height: 1.9; margin-bottom: 22px; font-weight: 300; }
+  /* ② 診断でわかること */
+  .check-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+  .check-item {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+    padding: 16px 18px; display: flex; align-items: flex-start; gap: 12px;
+    box-shadow: var(--shadow-sm);
+  }
+  .check-icon {
+    width: 22px; height: 22px; min-width: 22px; border-radius: 50%;
+    background: var(--sage); display: flex; align-items: center;
+    justify-content: center; margin-top: 1px;
+  }
+  .check-icon::after { content: '✓'; font-size: 11px; color: #fff; font-weight: 500; }
+  .check-text { font-size: 14px; color: var(--text); line-height: 1.8; font-weight: 300; }
 
-  /* FV btn-sub */
-  .btn-sub { font-size: 11px; font-weight: 300; letter-spacing: 0.08em; opacity: 0.85; }
+  .section-note {
+    font-size: 13px; color: var(--text-sub); line-height: 2; text-align: center;
+    font-weight: 300; margin-bottom: 28px;
+  }
+  .section-note em { font-style: normal; color: var(--text); font-weight: 400; }
 
-  /* Why text */
-  .why-text {
-    font-size: 14px;
-    color: var(--text-sub);
-    line-height: 2.1;
-    margin-bottom: 32px;
-    font-weight: 300;
+  /* ③ LINE登録 */
+  .line-intro {
+    font-size: 14px; color: var(--text-sub); line-height: 2.1;
+    text-align: center; margin-bottom: 28px; font-weight: 300;
   }
-  .why-text em { font-style: normal; color: var(--text); font-weight: 400; }
+  .free-items { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+  .free-item {
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+    padding: 18px 20px; display: flex; align-items: flex-start; gap: 14px;
+    box-shadow: var(--shadow-sm);
+  }
+  .free-icon { font-size: 20px; line-height: 1; min-width: 28px; text-align: center; }
+  .free-item-title { font-size: 14px; font-weight: 400; color: var(--text); margin-bottom: 4px; line-height: 1.6; }
+  .free-item-desc { font-size: 12px; color: var(--text-sub); line-height: 1.8; font-weight: 300; }
 
-  /* Story section */
-  .story-sec { background: var(--bg-soft); }
-  .story-body { margin-top: 8px; }
-  .story-text {
-    font-size: 14px;
-    color: var(--text-sub);
-    line-height: 2.1;
-    margin-bottom: 20px;
-    font-weight: 300;
+  /* ④ メルマガ */
+  .mailmag-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
+    margin-bottom: 0;
   }
-  .story-text em { font-style: normal; color: var(--text); font-weight: 400; }
-  .story-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 20px 0;
-  }
-  .story-list li {
-    font-size: 14px;
-    color: var(--text-sub);
-    line-height: 2;
-    padding-left: 1.2em;
-    position: relative;
-    font-weight: 300;
-  }
-  .story-list li::before {
-    content: '・';
-    position: absolute;
-    left: 0;
-    color: var(--sage);
+  .mailmag-card img { width: 100%; height: auto; display: block; }
+  .mailmag-card-body { padding: 24px 24px 32px; }
+  .mailmag-desc {
+    font-size: 13px; color: var(--text-sub); line-height: 2.1;
+    margin-bottom: 24px; font-weight: 300;
   }
 
-  /* Before / After section */
-  .ba-sec { background: var(--bg); }
-  .ba-table {
-    margin-top: 28px;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid var(--border);
+  /* ⑤ Kindle */
+  .kindle-lead {
+    font-size: 13px; color: var(--text-sub); line-height: 2;
+    text-align: center; margin-bottom: 24px; font-weight: 300;
   }
-  .ba-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  .kindle-banner-link { display: block; margin-bottom: 28px; }
+  .kindle-banner-img {
+    width: 100%; height: auto; display: block;
+    border-radius: 16px; box-shadow: var(--shadow);
   }
-  .ba-header {
-    background: var(--bg-soft);
-  }
-  .ba-before, .ba-after {
-    padding: 14px 16px;
-    font-size: 13px;
-    line-height: 1.7;
-    border-bottom: 1px solid var(--border);
-  }
-  .ba-header .ba-before,
-  .ba-header .ba-after {
-    font-family: var(--accent);
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    color: var(--text-sub);
-    text-align: center;
-    font-weight: 400;
-    border-bottom: 1px solid var(--border);
-  }
-  .ba-before {
-    color: var(--text-sub);
-    font-weight: 300;
-    border-right: 1px solid var(--border);
-    background: #faf9f7;
-  }
-  .ba-after {
-    color: var(--text);
-    font-weight: 400;
-    background: #f4f7f5;
-  }
-  .ba-row:last-child .ba-before,
-  .ba-row:last-child .ba-after { border-bottom: none; }
-  .ba-closing {
-    margin-top: 28px;
-    font-size: 14px;
-    color: var(--text-sub);
-    line-height: 2.1;
-    text-align: center;
-    font-weight: 300;
-  }
-  .ba-closing em { font-style: normal; color: var(--text); font-weight: 400; }
 
-  /* Closing section */
-  .closing-sec { background: var(--bg-soft); text-align: center; }
-  .closing-text {
-    font-family: var(--serif);
-    font-size: clamp(17px, 4.5vw, 22px);
-    color: var(--text);
-    line-height: 1.9;
-    font-weight: 400;
-    margin-bottom: 28px;
+  /* ⑥ プロフィール */
+  .profile-lead {
+    font-size: 14px; color: var(--text-sub); line-height: 2.1;
+    margin-bottom: 0; font-weight: 300;
   }
-  .closing-text em { font-style: normal; color: var(--sage); }
+  .profile-hl { color: var(--text); font-weight: 400; }
+  .profile-manga {
+    width: 100%; height: auto; display: block;
+    border-radius: 16px; margin-top: 24px; box-shadow: var(--shadow);
+  }
+
+  /* ⑦ 最後のメッセージ */
+  .closing-sec { text-align: center; }
+  .closing-main {
+    font-family: var(--serif); font-size: clamp(17px, 4.5vw, 22px);
+    font-weight: 400; color: var(--text); line-height: 1.9; margin-bottom: 16px;
+  }
   .closing-sub {
-    font-size: 14px;
-    color: var(--text-sub);
-    line-height: 2.2;
-    font-weight: 300;
-    letter-spacing: 0.04em;
+    font-size: 13px; color: var(--text-sub); line-height: 2.1;
+    margin-bottom: 32px; font-weight: 300;
   }
+  .closing-sub em { font-style: normal; color: var(--text); }
 
-  /* Books banner */
-  .books-sec { background: var(--bg); padding: 48px 0; }
-  .books-banner-link { display: block; }
-  .books-banner-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 16px;
-    box-shadow: var(--shadow);
-  }
+  /* フッター */
+  .footer { background: var(--bg); padding: 40px 0 32px; text-align: center; }
+  .sns-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 16px; flex-wrap: wrap; }
+  .sns-link { font-size: 13px; color: var(--text-sub); text-decoration: none; font-weight: 300; }
+  .sns-link:hover { color: var(--text); }
+  .copyright { font-size: 11px; color: var(--text-sub); font-family: var(--accent); letter-spacing: 0.1em; font-weight: 300; }
 
-  /* Profile */
-  .profile-sec { background: var(--bg); }
-  .profile-content { background: var(--bg-card); border: 1px solid var(--border); border-radius: 22px; padding: 36px 28px; box-shadow: var(--shadow-sm); }
-  .profile-text { font-size: 13.5px; color: var(--text-sub); line-height: 2.1; margin-bottom: 18px; font-weight: 300; }
-  .profile-text:last-child { margin-bottom: 0; }
-  .profile-hl { font-family: var(--serif); color: var(--text); font-weight: 400; }
-  .profile-manga { width: 100%; height: auto; display: block; border-radius: 12px; margin-top: 28px; }
-
-  /* Footer */
-  .footer {
-    padding: 56px 24px 48px;
-    background: var(--bg-soft);
-    text-align: center;
-    border-top: 1px solid var(--border);
-  }
-  .footer-tagline {
-    font-family: var(--accent);
-    font-size: 13px;
-    color: var(--text-pale);
-    letter-spacing: 0.15em;
-    margin-bottom: 32px;
-    line-height: 2;
-  }
-  .sns-links { display: flex; justify-content: center; gap: 12px; margin-bottom: 32px; flex-wrap: wrap; }
-  .sns-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 9px 18px;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    text-decoration: none;
-    color: var(--text-sub);
-    font-size: 12px;
-    transition: all 0.3s;
-  }
-  .sns-link:hover { background: var(--sage); color: #fff; border-color: var(--sage); transform: translateY(-2px); }
-  .copyright { font-size: 11px; color: var(--text-pale); letter-spacing: 0.12em; }
+  /* フェードイン */
+  .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 <body>
 
+<!-- ① FV -->
 <section class="fv">
-  <div class="fv-image-wrap">
-    <img src="images/fv_banner.webp" alt="HSS型HSPのための感覚整理・自己理解鑑定｜川上りさ">
+  <div class="fv-img-wrap">
+    <img src="images/fv_new.webp" alt="人といると疲れる。頑張っているのに苦しい。それはあなたの特性に合わない頑張り方かもしれません。｜川上りさ">
   </div>
   <div class="fv-cta">
-    <a href="https://www.reservestock.jp/subscribe/321101" class="btn-primary" target="_blank" rel="noopener">
-      自分の感覚を、整理してみる🌿<br><span class="btn-sub">✉️ 無料レターを受け取る（登録30秒）</span>
+    <p class="fv-lead fade-in">
+      診断後は、あなたのタイプに合わせた<br>解説を無料でお届けしています。
+    </p>
+    <a href="https://risa-shindan.vercel.app" class="btn-main fade-in" target="_blank" rel="noopener">
+      1分でわかる HSPタイプ診断
+      <span class="btn-main-sub">【無料で診断する】</span>
     </a>
   </div>
 </section>
 
-<section class="sec feelings">
+<!-- ② 診断でわかること -->
+<section class="sec sec-alt">
   <div class="wrap">
-    <span class="sec-label fade-in">◦ こんな感覚ありませんか？ ◦</span>
-    <div class="feelings-list">
-      <div class="feeling-item fade-in">
-        <div class="feeling-check"></div>
-        <p class="feeling-text">発信したいのに、<br>投稿画面を開くだけで疲れる</p>
+    <span class="sec-label fade-in">◦ what you'll discover ◦</span>
+    <h2 class="content-title fade-in">診断でわかること</h2>
+    <div class="check-list">
+      <div class="check-item fade-in">
+        <div class="check-icon"></div>
+        <p class="check-text">あなたはどんなHSPタイプなのか</p>
       </div>
-      <div class="feeling-item fade-in">
-        <div class="feeling-check"></div>
-        <p class="feeling-text">SNSで誰かの活躍を見るだけで、<br>どっと疲れる夜がある</p>
+      <div class="check-item fade-in">
+        <div class="check-icon"></div>
+        <p class="check-text">疲れやすさの理由</p>
       </div>
-      <div class="feeling-item fade-in">
-        <div class="feeling-check"></div>
-        <p class="feeling-text">「ちゃんとしなきゃ」を続けるほど、<br>何もできなくなる</p>
+      <div class="check-item fade-in">
+        <div class="check-icon"></div>
+        <p class="check-text">あなたが持っている強み</p>
+      </div>
+      <div class="check-item fade-in">
+        <div class="check-icon"></div>
+        <p class="check-text">人間関係や毎日を少しラクにするヒント</p>
       </div>
     </div>
-    <p class="feelings-punchline fade-in">
-      それ、努力不足じゃなく、<br>
-      <em>「感覚に合わない頑張り方」</em><br>
-      なのかもしれません。
+    <p class="section-note fade-in">
+      この診断は、あなたを分類するためのものではありません。<br>
+      <em>「今の自分を知る入口」</em>です。
     </p>
+    <a href="https://risa-shindan.vercel.app" class="btn-main fade-in" target="_blank" rel="noopener">
+      無料で診断する
+    </a>
   </div>
 </section>
 
-
-<section class="sec story-sec">
+<!-- ③ LINE登録 -->
+<section class="sec">
   <div class="wrap">
-    <span class="sec-label fade-in">◦ わたしのこと ◦</span>
-    <h2 class="content-title fade-in">私も、ずっと「頑張り方」を<br>間違えていました。</h2>
-    <div class="story-body fade-in">
-      <p class="story-text">
-        起業塾をいくつも渡り歩きながら、<br>
-        「もっと頑張らなきゃ」と思っていました。
-      </p>
-      <p class="story-text">
-        毎日投稿。交流。売れそうなテーマ。<br>
-        言われた通りに頑張るほど、どんどん苦しくなっていったんです。
-      </p>
-      <p class="story-text">
-        気づけば、自分の「すき」まで分からなくなっていました。
-      </p>
-      <p class="story-text">
-        でも必要だったのは、もっと頑張ることではなく、<br>
-        <em>「自分の感覚を置き去りにしないこと」</em>だったのです🌙
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="sec ba-sec">
-  <div class="wrap">
-    <span class="sec-label fade-in">◦ before / after ◦</span>
-    <h2 class="content-title fade-in">「無理に頑張る形」から、<br>「自分に合う形」へ</h2>
-    <div class="ba-table fade-in">
-      <div class="ba-row ba-header">
-        <div class="ba-before">Before</div>
-        <div class="ba-after">After</div>
-      </div>
-      <div class="ba-row">
-        <div class="ba-before">毎日投稿しなきゃ</div>
-        <div class="ba-after">書きたい時に、静かに書く</div>
-      </div>
-      <div class="ba-row">
-        <div class="ba-before">バズらなきゃ</div>
-        <div class="ba-after">1人の人に、深く届く言葉</div>
-      </div>
-      <div class="ba-row">
-        <div class="ba-before">売れそうな強みを探す</div>
-        <div class="ba-after">自分の感覚で選ぶ</div>
-      </div>
-    </div>
-    <p class="ba-closing fade-in">
-      "もっと頑張る"ではなく、<br>
-      <em>"合わない形を減らす"</em>ことで、<br>
-      少しずつ、また動けるようになることがあります🌿
+    <span class="sec-label fade-in">◦ LINE限定 無料コンテンツ ◦</span>
+    <h2 class="content-title fade-in">診断だけでは<br>分からないこともあります</h2>
+    <p class="line-intro fade-in">
+      診断ではタイプが分かります。<br>
+      でも「私はなぜ同じところで止まるんだろう？」<br>
+      そこまでは、診断だけでは整理しきれません。<br><br>
+      診断を受けた方限定で、<br>
+      LINEでは無料コンテンツをご用意しています🌿
     </p>
+    <div class="free-items">
+      <div class="free-item fade-in">
+        <span class="free-icon">🌙</span>
+        <div>
+          <p class="free-item-title">わたしが止まる理由診断</p>
+          <p class="free-item-desc">なぜ同じところで止まってしまうのか、その理由が分かります</p>
+        </div>
+      </div>
+      <div class="free-item fade-in">
+        <span class="free-icon">📝</span>
+        <div>
+          <p class="free-item-title">タイプ別ミニワーク</p>
+          <p class="free-item-desc">自分の感覚を少しずつ整理していくための実践ワーク</p>
+        </div>
+      </div>
+      <div class="free-item fade-in">
+        <span class="free-icon">💌</span>
+        <div>
+          <p class="free-item-title">HSS型HSPの感覚整理レター</p>
+          <p class="free-item-desc">自分を責めずに、自分らしく続けるためのヒントをお届け</p>
+        </div>
+      </div>
+    </div>
+    <a href="https://www.reservestock.jp/subscribe/321101" class="btn-sage fade-in" target="_blank" rel="noopener">
+      LINEに登録する（無料）
+    </a>
   </div>
 </section>
 
-<section class="sec line-sec">
+<!-- ④ 感覚整理レター -->
+<section class="sec sec-alt">
   <div class="wrap">
-    <div class="line-card fade-in">
-      <img src="images/mailmag_banner.webp" alt="HSS型HSPのための感覚整理レター メルマガ登録" class="mailmag-banner">
-      <div class="line-card-body">
-        <h2 class="line-card-title">HSS型HSP向け 感覚整理レター🌿</h2>
-        <p class="line-card-desc">
+    <span class="sec-label fade-in">◦ newsletter ◦</span>
+    <h2 class="content-title fade-in">HSS型HSPの<br>感覚整理レター🌿</h2>
+    <div class="mailmag-card fade-in">
+      <img src="images/mailmag_banner.webp" alt="HSS型HSPのための感覚整理レター">
+      <div class="mailmag-card-body">
+        <p class="mailmag-desc">
+          頑張るほど苦しくなる。そんなHSS型HSPさんへ。<br><br>
           📩 感覚整理レターでお届けしていること<br><br>
           ・投稿したいのに、書こうとすると<br>
           　発信の手が止まってしまう理由<br><br>
@@ -874,55 +312,80 @@
           　苦しくなってしまう感覚の正体<br><br>
           ・"ちゃんとしなきゃ"を手放しながら、<br>
           　無理しない形で続けていくためのコツ<br><br>
-          読み終わったあと、<br>
-          「あ、私はダメだったんじゃなくて、<br>
-          ずっと無理していただけかもしれない」<br><br>
-          そんなふうに、少し肩の力が<br>
+          読み終わったあと、少し肩の力が<br>
           抜けるようなレターです🌙
         </p>
-        <a href="https://www.reservestock.jp/subscribe/321101" class="btn-line" target="_blank" rel="noopener">
-          感覚整理レターを受け取る🌿（無料）<span class="btn-arrow">→</span>
+        <a href="https://www.reservestock.jp/subscribe/321101" class="btn-sage" target="_blank" rel="noopener">
+          無料でレターを受け取る
         </a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sec closing-sec">
+<!-- ⑤ Kindle -->
+<section class="sec">
   <div class="wrap">
-    <p class="closing-text fade-in">
-      頑張れなかったんじゃない。<br>
-      ずっと、<em>"感覚"を後回しにしてきただけかもしれません。</em>
+    <span class="sec-label fade-in">◦ books ◦</span>
+    <h2 class="content-title fade-in">HSS型HSPのための<br>電子書籍📚</h2>
+    <p class="kindle-lead fade-in">
+      人間関係・自己理解・発信・働き方。<br>
+      HSS型HSPさんが「自分らしく生きるヒント」を<br>
+      まとめた電子書籍を出版しています。<br>
+      現在13冊公開中です📚
     </p>
-    <p class="closing-sub fade-in">
-      わたしの感覚を置き去りにしないことから<br>始めてみませんか?🌿
-    </p>
-  </div>
-</section>
-
-<section class="sec books-sec">
-  <div class="wrap">
-    <a href="https://www.amazon.co.jp/stores/author/B0DTTXQV2K/allbooks" target="_blank" rel="noopener" class="books-banner-link fade-in">
-      <img src="images/books_banner.webp" alt="著書一覧 全11冊｜川上 りさ" class="books-banner-img">
+    <a href="https://www.amazon.co.jp/stores/author/B0DTTXQV2K/allbooks" class="kindle-banner-link fade-in" target="_blank" rel="noopener">
+      <img src="images/books_banner.webp" alt="著書一覧 全13冊｜川上 りさ" class="kindle-banner-img">
+    </a>
+    <a href="https://www.amazon.co.jp/stores/author/B0DTTXQV2K/allbooks" class="btn-outline fade-in" target="_blank" rel="noopener">
+      Kindle一覧を見る
     </a>
   </div>
 </section>
 
-<section class="sec profile-sec">
+<!-- ⑥ 自己紹介 -->
+<section class="sec sec-alt">
   <div class="wrap">
     <span class="sec-label fade-in">◦ about ◦</span>
-    <h2 class="content-title fade-in">川上 りさについて</h2>
-    <div class="profile-content fade-in">
-      <p class="profile-text"><span class="profile-hl">川上りさ｜HSS型HSP。</span><br>転職を繰り返し、海外駐在帯同中に起業塾をハシゴして貯金を使い切った経験から、『感覚を置き去りにしない生き方』を発信しています。</p>
-      <img src="images/profile_manga.webp" alt="川上 りさの人生ストーリー" class="profile-manga">
-    </div>
+    <h2 class="content-title fade-in">こんにちは、<br>りさです🌙</h2>
+    <p class="profile-lead fade-in">
+      私は転職を10回以上経験し、<br>
+      夫の海外駐在帯同をきっかけに、<br>
+      人間関係に悩み「自分が分からない」<br>
+      そんな時期を過ごしました。<br><br>
+      心理学・占い・AI・発信を学び続ける中で<br>
+      気づいたのは、<br>
+      必要だったのは新しい知識ではなく、<br>
+      <span class="profile-hl">自分の感覚を取り戻すこと</span>でした。<br><br>
+      今は、HSS型HSPさんが<br>
+      自分を後回しにしない人間関係や生き方、<br>
+      働き方を見つけられるよう、<br>
+      診断・鑑定・発信をお届けしています。
+    </p>
+    <img src="images/profile_manga.webp" alt="川上 りさの人生ストーリー" class="profile-manga fade-in">
+  </div>
+</section>
+
+<!-- ⑦ 最後のメッセージ -->
+<section class="sec closing-sec">
+  <div class="wrap">
+    <p class="closing-main fade-in">
+      もっと頑張る前に、<br>
+      まずは、自分を知ることから。
+    </p>
+    <p class="closing-sub fade-in">
+      あなたの特性を知ることで、<br>
+      今まで責め続けてきた自分を、<br>
+      <em>少しだけ優しく見られるかもしれません。</em>
+    </p>
+    <a href="https://risa-shindan.vercel.app" class="btn-main fade-in" target="_blank" rel="noopener">
+      1分でわかる HSPタイプ診断
+      <span class="btn-main-sub">【無料で診断する】</span>
+    </a>
   </div>
 </section>
 
 <footer class="footer">
-  <p class="footer-tagline">
-    your line, your future 🌿
-  </p>
   <div class="sns-links">
     <a href="https://www.instagram.com/risa.art.fortune/" class="sns-link" target="_blank" rel="noopener">📷 Instagram</a>
     <a href="https://www.threads.com/@risa.art.fortune" class="sns-link" target="_blank" rel="noopener">🧵 Threads</a>
@@ -932,7 +395,6 @@
 </footer>
 
 <script>
-  // Scroll fade-in
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -940,8 +402,7 @@
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
-
+  }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 </body>
