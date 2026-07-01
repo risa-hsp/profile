@@ -82,7 +82,7 @@
   /* ボタン */
   .btn-main {
     display: flex; flex-direction: column; align-items: center; justify-content: center;
-    width: 100%; padding: 18px 24px; background: var(--text); color: #fff;
+    width: 100%; padding: 18px 24px; background: var(--sage); color: #fff;
     text-decoration: none; border-radius: 50px; font-family: var(--serif);
     font-size: 15px; font-weight: 400; letter-spacing: 0.06em; gap: 4px;
     transition: opacity 0.2s;
@@ -101,12 +101,12 @@
 
   .btn-outline {
     display: flex; align-items: center; justify-content: center;
-    width: 100%; padding: 16px 24px; border: 1.5px solid var(--text);
-    color: var(--text); text-decoration: none; border-radius: 50px;
+    width: 100%; padding: 16px 24px; background: var(--sage);
+    color: #fff; text-decoration: none; border-radius: 50px;
     font-family: var(--serif); font-size: 14px; font-weight: 400;
-    letter-spacing: 0.06em; transition: all 0.2s;
+    letter-spacing: 0.06em; transition: opacity 0.2s; border: none;
   }
-  .btn-outline:hover { background: var(--text); color: #fff; }
+  .btn-outline:hover { opacity: 0.85; }
 
   /* ② 診断でわかること */
   .check-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
@@ -245,7 +245,8 @@
       </div>
     </div>
     <p class="section-note fade-in">
-      この診断は、あなたを分類するためのものではありません。<br>
+      この診断は、あなたを<br>
+      分類するためのものではありません。<br>
       <em>「今の自分を知る入口」</em>です。
     </p>
     <a href="https://risa-shindan.vercel.app" class="btn-main fade-in" target="_blank" rel="noopener">
@@ -281,15 +282,8 @@
           <p class="free-item-desc">自分の感覚を少しずつ整理していくための実践ワーク</p>
         </div>
       </div>
-      <div class="free-item fade-in">
-        <span class="free-icon">💌</span>
-        <div>
-          <p class="free-item-title">HSS型HSPの感覚整理レター</p>
-          <p class="free-item-desc">自分を責めずに、自分らしく続けるためのヒントをお届け</p>
-        </div>
-      </div>
     </div>
-    <a href="https://www.reservestock.jp/subscribe/321101" class="btn-sage fade-in" target="_blank" rel="noopener">
+    <a href="https://lin.ee/txWtYjyz" class="btn-sage fade-in" target="_blank" rel="noopener">
       LINEに登録する（無料）
     </a>
   </div>
@@ -315,7 +309,7 @@
           読み終わったあと、少し肩の力が<br>
           抜けるようなレターです🌙
         </p>
-        <a href="https://www.reservestock.jp/subscribe/321101" class="btn-sage" target="_blank" rel="noopener">
+        <a href="https://lin.ee/txWtYjyz" class="btn-sage" target="_blank" rel="noopener">
           無料でレターを受け取る
         </a>
       </div>
