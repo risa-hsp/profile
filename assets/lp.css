@@ -122,3 +122,51 @@ h2{font-size:25px;letter-spacing:.02em;margin-bottom:28px}
 /* HTMLの寸法属性を保ちつつ、プロフィール写真を正方形で表示する。 */
 .portrait img{height:auto}
 
+/* 診断・LINE特典を分け、書籍とメルマガをコンパクトに紹介。 */
+.diagnosis-how{margin-top:36px;border-top:1px solid #929b8640;padding-top:24px}
+.diagnosis-how>h3{text-align:center;font-size:16px}
+.steps-compact{margin:18px 0 0;gap:16px}
+.steps-compact li{padding:18px 20px;background:#fcfaf580}
+.steps-compact .step-number{font-size:23px;margin-bottom:8px}
+.steps-compact h3{font-size:16px}
+.steps-compact p{font-size:12px;margin-top:8px;line-height:1.8}
+.line-gifts{background:#fcfaf5}
+.line-gifts .cta{margin-top:28px}
+.cta-secondary{background:transparent;border:1px solid var(--sage);box-shadow:none}
+.cta-secondary:hover{background:#e7e9e1}
+.books{background:#fcfaf5;padding-top:64px;padding-bottom:64px}
+.books>.container>.eyebrow,.books h2,.section-lead{text-align:center}
+.books h2{font-size:clamp(24px,2.7vw,32px);margin-bottom:20px}
+.section-lead{font-size:14px}
+.book-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:30px}
+.book-card{border:1px solid #929b8633;border-radius:6px;background:#fffdf9;padding:24px;display:flex;flex-direction:column}
+.book-new{border-color:var(--gold)}
+.book-cover-pending{width:110px;height:155px;margin:0 auto 20px;background:var(--ivory);border:1px dashed #929b8677;display:grid;place-items:center;color:var(--muted);font-size:12px}
+.book-body{display:flex;flex-direction:column;flex:1}
+.book-category{font-size:11px;letter-spacing:.06em;color:#75603b}
+.book-card h3{font-size:18px;margin:5px 0 12px}
+.book-body>p:not(.book-category){font-size:13px;line-height:1.9;margin:0 0 20px}
+.book-link{display:flex;justify-content:space-between;align-items:center;min-height:44px;padding:10px 0;font-size:13px;border-top:1px solid #929b8640;text-decoration:none;margin-top:auto}
+.newsletter{padding-top:54px;padding-bottom:54px}
+.newsletter-card{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center}
+.newsletter h2{font-size:27px;margin-bottom:20px}
+.newsletter h2 span{display:block;font-size:14px;margin-bottom:6px}
+.newsletter p:not(.eyebrow):not(.note){font-size:14px}
+.newsletter .eyebrow{margin-bottom:16px}
+@media(max-width:700px){
+.diagnosis-how{margin-top:28px}
+.steps-compact{gap:8px}
+.steps-compact li{padding:16px 16px 16px 60px}
+.steps-compact .step-number{left:16px;top:14px;font-size:23px}
+.book-grid{grid-template-columns:1fr;gap:14px}
+.book-card{flex-direction:row;gap:18px;padding:20px 16px}
+.book-cover-pending{flex-shrink:0;width:76px;height:110px;margin:0;font-size:10px}
+.book-card h3{font-size:17px}
+.book-body>p:not(.book-category){font-size:12px;margin-bottom:10px}
+.book-link{font-size:12px}
+.books,.newsletter{padding-top:54px;padding-bottom:54px}
+.newsletter-card{grid-template-columns:1fr;gap:24px}
+.newsletter h2{font-size:25px}
+.newsletter .cta{margin:auto}
+.newsletter .note{text-align:center;max-width:none}
+}
