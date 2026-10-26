@@ -173,3 +173,12 @@ h2{font-size:25px;letter-spacing:.02em;margin-bottom:28px}
 
 .book-cover{display:block;width:110px;height:170px;object-fit:contain;margin:0 auto 20px}
 @media(max-width:700px){.book-cover{flex-shrink:0;width:76px;height:120px;margin:0;object-position:top}}
+
+/* アップロード素材を余白とともに配置。画像は全体を表示する。 */
+.empathy-comic{width:100%;height:auto;margin:34px auto 0;border-radius:6px}
+.series-label{text-align:center;font-family:var(--serif);font-size:16px;letter-spacing:.12em;color:#75603b;margin:0 0 14px}
+.series-label+.section-lead{margin-top:0}
+.newsletter-banner{width:100%;max-width:760px;height:auto;margin:0 auto 32px;border-radius:6px}
+.diagnosis-art-link{display:block;max-width:390px;margin:0 auto 32px}
+.diagnosis-art{width:100%;height:auto;border-radius:6px}
+@media(max-width:700px){.empathy-comic{margin-top:26px}.newsletter-banner{margin-bottom:26px}.diagnosis-art-link{max-width:340px;margin-bottom:28px}}
