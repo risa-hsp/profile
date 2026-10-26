@@ -2,7 +2,8 @@
 <html lang="ja">
 <head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CVSY7JMP3Z"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CVSY7JMP3Z">
+</script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -11,393 +12,142 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>川上 りさ｜HSS型HSPの感覚整理・自己理解</title>
-<meta name="description" content="人といると疲れる。頑張っているのに苦しい。それはあなたの特性に合わない頑張り方かもしれません。まずは1分で分かるHSPタイプ診断から始めてみませんか？">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg:       #F7F5F2;
-    --bg-soft:  #F2EEE9;
-    --bg-card:  #FDFCFB;
-    --sage:     #B8C4B2;
-    --mist:     #AEBCC3;
-    --gold:     #D8C6A5;
-    --text:     #3F3A37;
-    --text-sub: #7A7470;
-    --border:   rgba(63,58,55,0.1);
-    --shadow:   0 4px 20px rgba(63,58,55,0.08);
-    --shadow-sm:0 2px 8px rgba(63,58,55,0.06);
-    --serif:    'Noto Serif JP', serif;
-    --accent:   'Cormorant Garamond', serif;
-    --radius:   20px;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--serif);
-    font-size: 14px;
-    line-height: 1.8;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .wrap { max-width: 480px; margin: 0 auto; padding: 0 24px; }
-  .sec { padding: 52px 0; }
-  .sec-alt { background: var(--bg-soft); }
-
-  .sec-label {
-    display: block;
-    font-family: var(--accent);
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: var(--text-sub);
-    margin-bottom: 16px;
-    text-align: center;
-  }
-
-  .content-title {
-    font-family: var(--serif);
-    font-size: clamp(20px, 5.5vw, 26px);
-    font-weight: 400;
-    line-height: 1.6;
-    color: var(--text);
-    margin-bottom: 24px;
-    text-align: center;
-  }
-
-  /* FV */
-  .fv { padding: 0; background: var(--bg); }
-  .fv-img-wrap { width: 100%; overflow: hidden; }
-  .fv-img-wrap img { width: 100%; height: auto; display: block; }
-  .fv-cta { padding: 32px 24px 40px; max-width: 480px; margin: 0 auto; text-align: center; }
-  .fv-lead {
-    font-size: 13px; color: var(--text-sub); line-height: 2;
-    margin-bottom: 28px; font-weight: 300;
-  }
-
-  /* ボタン */
-  .btn-main {
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    width: 100%; padding: 18px 24px; background: var(--sage); color: #fff;
-    text-decoration: none; border-radius: 50px; font-family: var(--serif);
-    font-size: 15px; font-weight: 400; letter-spacing: 0.06em; gap: 4px;
-    transition: opacity 0.2s;
-  }
-  .btn-main:hover { opacity: 0.85; }
-  .btn-main-sub { font-size: 11px; font-weight: 300; opacity: 0.75; letter-spacing: 0.08em; }
-
-  .btn-sage {
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    width: 100%; padding: 18px 24px; background: var(--sage); color: #fff;
-    text-decoration: none; border-radius: 50px; font-family: var(--serif);
-    font-size: 15px; font-weight: 400; letter-spacing: 0.06em; gap: 4px;
-    transition: opacity 0.2s;
-  }
-  .btn-sage:hover { opacity: 0.85; }
-
-  .btn-outline {
-    display: flex; align-items: center; justify-content: center;
-    width: 100%; padding: 16px 24px; background: var(--sage);
-    color: #fff; text-decoration: none; border-radius: 50px;
-    font-family: var(--serif); font-size: 14px; font-weight: 400;
-    letter-spacing: 0.06em; transition: opacity 0.2s; border: none;
-  }
-  .btn-outline:hover { opacity: 0.85; }
-
-  /* ② 診断でわかること */
-  .check-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
-  .check-item {
-    background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
-    padding: 16px 18px; display: flex; align-items: flex-start; gap: 12px;
-    box-shadow: var(--shadow-sm);
-  }
-  .check-icon {
-    width: 22px; height: 22px; min-width: 22px; border-radius: 50%;
-    background: var(--sage); display: flex; align-items: center;
-    justify-content: center; margin-top: 1px;
-  }
-  .check-icon::after { content: '✓'; font-size: 11px; color: #fff; font-weight: 500; }
-  .check-text { font-size: 14px; color: var(--text); line-height: 1.8; font-weight: 300; }
-
-  .section-note {
-    font-size: 13px; color: var(--text-sub); line-height: 2; text-align: center;
-    font-weight: 300; margin-bottom: 28px;
-  }
-  .section-note em { font-style: normal; color: var(--text); font-weight: 400; }
-
-  /* ③ LINE登録 */
-  .line-intro {
-    font-size: 14px; color: var(--text-sub); line-height: 2.1;
-    text-align: center; margin-bottom: 28px; font-weight: 300;
-  }
-  .free-items { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
-  .free-item {
-    background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
-    padding: 18px 20px; display: flex; align-items: flex-start; gap: 14px;
-    box-shadow: var(--shadow-sm);
-  }
-  .free-icon { font-size: 20px; line-height: 1; min-width: 28px; text-align: center; }
-  .free-item-title { font-size: 14px; font-weight: 400; color: var(--text); margin-bottom: 4px; line-height: 1.6; }
-  .free-item-desc { font-size: 12px; color: var(--text-sub); line-height: 1.8; font-weight: 300; }
-
-  /* ④ メルマガ */
-  .mailmag-card {
-    background: var(--bg-card); border: 1px solid var(--border);
-    border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
-    margin-bottom: 0;
-  }
-  .mailmag-card img { width: 100%; height: auto; display: block; }
-  .mailmag-card-body { padding: 24px 24px 32px; }
-  .mailmag-desc {
-    font-size: 13px; color: var(--text-sub); line-height: 2.1;
-    margin-bottom: 24px; font-weight: 300;
-  }
-
-  /* ⑤ Kindle */
-  .kindle-lead {
-    font-size: 13px; color: var(--text-sub); line-height: 2;
-    text-align: center; margin-bottom: 24px; font-weight: 300;
-  }
-  .kindle-banner-link { display: block; margin-bottom: 28px; }
-  .kindle-banner-img {
-    width: 100%; height: auto; display: block;
-    border-radius: 16px; box-shadow: var(--shadow);
-  }
-
-  /* ⑥ プロフィール */
-  .profile-lead {
-    font-size: 14px; color: var(--text-sub); line-height: 2.1;
-    margin-bottom: 0; font-weight: 300;
-  }
-  .profile-hl { color: var(--text); font-weight: 400; }
-  .profile-manga {
-    width: 100%; height: auto; display: block;
-    border-radius: 16px; margin-top: 24px; box-shadow: var(--shadow);
-  }
-
-  /* ⑦ 最後のメッセージ */
-  .closing-sec { text-align: center; }
-  .closing-main {
-    font-family: var(--serif); font-size: clamp(17px, 4.5vw, 22px);
-    font-weight: 400; color: var(--text); line-height: 1.9; margin-bottom: 16px;
-  }
-  .closing-sub {
-    font-size: 13px; color: var(--text-sub); line-height: 2.1;
-    margin-bottom: 32px; font-weight: 300;
-  }
-  .closing-sub em { font-style: normal; color: var(--text); }
-
-  /* フッター */
-  .footer { background: var(--bg); padding: 40px 0 32px; text-align: center; }
-  .sns-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 16px; flex-wrap: wrap; }
-  .sns-link { font-size: 13px; color: var(--text-sub); text-decoration: none; font-weight: 300; }
-  .sns-link:hover { color: var(--text); }
-  .copyright { font-size: 11px; color: var(--text-sub); font-family: var(--accent); letter-spacing: 0.1em; font-weight: 300; }
-
-  /* フェードイン */
-  .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .fade-in.visible { opacity: 1; transform: translateY(0); }
-</style>
+<title>川上りさ｜人に合わせる毎日から、わたしを知る時間へ。</title>
+<meta name="description" content="気を遣いすぎる理由も、あなたが持っている強みも。無料HSPタイプ診断をきっかけに、自分に合った過ごし方を見つけてみませんか。公式LINEからお受け取りいただけます。">
+<link rel="stylesheet" href="assets/lp.css">
 </head>
 <body>
-
-<!-- ① FV -->
-<section class="fv">
-  <div class="fv-img-wrap">
-    <img src="images/fv_new.webp" alt="人といると疲れる。頑張っているのに苦しい。それはあなたの特性に合わない頑張り方かもしれません。｜川上りさ">
-  </div>
-  <div class="fv-cta">
-    <p class="fv-lead fade-in">
-      診断後は、あなたのタイプに合わせた<br>解説を無料でお届けしています。
-    </p>
-    <a href="https://lin.ee/txWtYjyz" class="btn-main fade-in" target="_blank" rel="noopener">
-      1分でわかる HSPタイプ診断
-      <span class="btn-main-sub">【無料で診断する】</span>
-    </a>
-  </div>
+<a class="skip" href="#main">本文へスキップ</a>
+<header class="header">
+<a class="brand" href="./">川上 りさ<span>わたしを知る、小さな時間。</span>
+</a>
+<nav aria-label="メインナビゲーション">
+<a href="#about">プロフィール</a>
+<a href="#receive">診断の受け取り方</a>
+</nav>
+</header>
+<main id="main">
+<section class="hero" aria-labelledby="hero-title">
+<!-- 写真差し替え箇所。既存の窓辺の写真を再利用。位置調整は lp.css の .hero-photo。 -->
+<img class="hero-photo" src="images/hero.webp" width="507" height="1024" alt="やわらかな光が入る窓辺でくつろぐ女性" fetchpriority="high">
+<div class="hero-content">
+<p class="eyebrow">A LITTLE TIME FOR YOURSELF</p>
+<h1 id="hero-title">人に合わせる毎日から、<br>わたしを知る時間へ。</h1>
+<p class="hero-lead">気を遣いすぎる理由も、<br class="mobile">あなたが持っている強みも。<br>まずは自分の傾向を知ることから。</p>
+<a class="cta" href="https://lin.ee/txWtYjyz" target="_blank" rel="noopener">無料HSPタイプ診断を受け取る<span aria-hidden="true">↗</span>
+</a>
+<p class="note">LINE登録後、無料プレゼントページから診断できます。</p>
+</div>
+<span class="hero-caption" aria-hidden="true">心の声に、そっと耳をすませて。</span>
 </section>
-
-<!-- ② 診断でわかること -->
-<section class="sec sec-alt">
-  <div class="wrap">
-    <span class="sec-label fade-in">◦ what you'll discover ◦</span>
-    <h2 class="content-title fade-in">診断でわかること</h2>
-    <div class="check-list">
-      <div class="check-item fade-in">
-        <div class="check-icon"></div>
-        <p class="check-text">あなたはどんなHSPタイプなのか</p>
-      </div>
-      <div class="check-item fade-in">
-        <div class="check-icon"></div>
-        <p class="check-text">疲れやすさの理由</p>
-      </div>
-      <div class="check-item fade-in">
-        <div class="check-icon"></div>
-        <p class="check-text">あなたが持っている強み</p>
-      </div>
-      <div class="check-item fade-in">
-        <div class="check-icon"></div>
-        <p class="check-text">人間関係や毎日を少しラクにするヒント</p>
-      </div>
-    </div>
-    <p class="section-note fade-in">
-      この診断は、あなたを<br>
-      分類するためのものではありません。<br>
-      <em>「今の自分を知る入口」</em>です。
-    </p>
-    <a href="https://lin.ee/txWtYjyz" class="btn-main fade-in" target="_blank" rel="noopener">
-      無料で診断する
-    </a>
-  </div>
+<section class="section empathy">
+<div class="reading">
+<p class="eyebrow">DO YOU FEEL THIS WAY?</p>
+<h2>人といるのは好き。<br>でも、なぜか疲れてしまう。</h2>
+<p>友達と会って、楽しい時間を過ごしたはずなのに。<br>家に帰ると、どっと疲れている。</p>
+<blockquote>「あの言い方でよかったかな」<br>「余計なことを話してしまったかも」</blockquote>
+<p>気づけば、頭の中でひとり反省会。</p>
+<p>本当はひとりで過ごしたかったのに、誘われると断れなかったり。</p>
+<p>周りの人の希望はすぐにわかるのに、自分が何をしたいのかは、なかなかわからなかったり。</p>
+<p class="question">そんなことはありませんか？</p>
+</div>
 </section>
-
-<!-- ③ LINE登録 -->
-<section class="sec">
-  <div class="wrap">
-    <span class="sec-label fade-in">◦ LINE限定 無料コンテンツ ◦</span>
-    <h2 class="content-title fade-in">診断だけでは<br>分からないこともあります</h2>
-    <p class="line-intro fade-in">
-      診断ではタイプが分かります。<br>
-      でも「私はなぜ同じところで止まるんだろう？」<br>
-      そこまでは、診断だけでは整理しきれません。<br><br>
-      診断を受けた方限定で、<br>
-      LINEでは無料コンテンツをご用意しています🌿
-    </p>
-    <div class="free-items">
-      <div class="free-item fade-in">
-        <span class="free-icon">🌙</span>
-        <div>
-          <p class="free-item-title">わたしが止まる理由診断</p>
-          <p class="free-item-desc">なぜ同じところで止まってしまうのか、その理由が分かります</p>
-        </div>
-      </div>
-      <div class="free-item fade-in">
-        <span class="free-icon">📝</span>
-        <div>
-          <p class="free-item-title">タイプ別ミニワーク</p>
-          <p class="free-item-desc">自分の感覚を少しずつ整理していくための実践ワーク</p>
-        </div>
-      </div>
-    </div>
-    <a href="https://lin.ee/txWtYjyz" class="btn-sage fade-in" target="_blank" rel="noopener">
-      LINE登録で無料診断
-    </a>
-  </div>
+<section class="section awareness">
+<div class="reading">
+<p class="eyebrow">GET TO KNOW YOURSELF</p>
+<h2>自分を変える前に、<br>自分を知ってみる。</h2>
+<p>もっと気にしない性格になれたら。<br>もっと上手に人付き合いができたら。</p>
+<p>そう思って頑張ってきたかもしれません。</p>
+<p>でも、疲れやすさの理由を知らないまま、自分を変えようとするのは大変なこと。</p>
+<p>大切なのは、周りの人と同じようにできることよりも、自分に合った過ごし方を見つけることかもしれません。</p>
+</div>
 </section>
-
-<!-- ④ 感覚整理レター -->
-<section class="sec sec-alt">
-  <div class="wrap">
-    <span class="sec-label fade-in">◦ newsletter ◦</span>
-    <h2 class="content-title fade-in">HSS型HSPの<br>感覚整理レター🌿</h2>
-    <div class="mailmag-card fade-in">
-      <img src="images/mailmag_banner.webp" alt="HSS型HSPのための感覚整理レター">
-      <div class="mailmag-card-body">
-        <p class="mailmag-desc">
-          頑張るほど苦しくなる。そんなHSS型HSPさんへ。<br><br>
-          📩 感覚整理レターでお届けしていること<br><br>
-          ・投稿したいのに、書こうとすると<br>
-          　発信の手が止まってしまう理由<br><br>
-          ・「売れそう」を追いかけるほど、<br>
-          　苦しくなってしまう感覚の正体<br><br>
-          ・"ちゃんとしなきゃ"を手放しながら、<br>
-          　無理しない形で続けていくためのコツ<br><br>
-          読み終わったあと、少し肩の力が<br>
-          抜けるようなレターです🌙
-        </p>
-        <a href="https://www.reservestock.jp/subscribe/321101" class="btn-sage" target="_blank" rel="noopener">
-          無料でレターを受け取る
-        </a>
-      </div>
-    </div>
-  </div>
+<section class="section diagnosis" id="diagnosis">
+<div class="container diagnosis-grid">
+<div>
+<p class="eyebrow">A SMALL FIRST STEP</p>
+<h2>あなたには、<br>どんな傾向がある？</h2>
+<p>HSPタイプ診断は、自分の感じ方や行動の傾向を振り返るための無料コンテンツです。</p>
+<p>診断を通して、自分がどんな場面で疲れやすいのか、どんな強みを持っているのかを考えるきっかけにしてみませんか。</p>
+</div>
+<div class="diagnosis-card">
+<span class="card-label">無料 HSPタイプ診断</span>
+<p>誰かと比べるためでも、性格を決めつけるためでもありません。</p>
+<h3>「わたしは、どうしたい？」</h3>
+<p>その問いに、少しずつ答えられるようになるための第一歩です。</p>
+<a class="cta" href="https://lin.ee/txWtYjyz" target="_blank" rel="noopener">無料HSPタイプ診断を受け取る<span aria-hidden="true">↗</span>
+</a>
+</div>
+</div>
 </section>
-
-<!-- ⑤ Kindle -->
-<section class="sec">
-  <div class="wrap">
-    <span class="sec-label fade-in">◦ books ◦</span>
-    <h2 class="content-title fade-in">HSS型HSPのための<br>電子書籍📚</h2>
-    <p class="kindle-lead fade-in">
-      人間関係・自己理解・発信・働き方。<br>
-      HSS型HSPさんが「自分らしく生きるヒント」を<br>
-      まとめた電子書籍を出版しています。<br>
-      現在13冊公開中です📚
-    </p>
-    <a href="https://www.amazon.co.jp/stores/author/B0DTTXQV2K/allbooks" class="kindle-banner-link fade-in" target="_blank" rel="noopener">
-      <img src="images/books_banner.webp" alt="著書一覧 全13冊｜川上 りさ" class="kindle-banner-img">
-    </a>
-    <a href="https://www.amazon.co.jp/stores/author/B0DTTXQV2K/allbooks" class="btn-outline fade-in" target="_blank" rel="noopener">
-      Kindle一覧を見る
-    </a>
-  </div>
+<section class="section receive" id="receive">
+<div class="container">
+<p class="eyebrow">HOW TO RECEIVE</p>
+<h2>無料診断の受け取り方</h2>
+<ol class="steps">
+<li>
+<span class="step-number" aria-hidden="true">01</span>
+<h3>公式LINEに登録する</h3>
+<p>このページのボタンから<br>お受け取りいただけます。</p>
+</li>
+<li>
+<span class="step-number" aria-hidden="true">02</span>
+<h3>届いた無料プレゼント<br>ページを開く</h3>
+<p>LINEに届くご案内から<br>プレゼントページへ。</p>
+</li>
+<li>
+<span class="step-number" aria-hidden="true">03</span>
+<h3>HSPタイプ診断を選んで、<br>自分の傾向をチェックする</h3>
+<p>自分のペースで、<br>今の気持ちを振り返って。</p>
+</li>
+</ol>
+<p class="receive-note">プレゼントページでは、自己理解に役立つほかの無料コンテンツも紹介しています。</p>
+<a class="text-link" href="https://risa-hsp.github.io/profile/present/">登録済みの方：無料プレゼントページへ <span aria-hidden="true">↗</span>
+</a>
+</div>
 </section>
-
-<!-- ⑥ 自己紹介 -->
-<section class="sec sec-alt">
-  <div class="wrap">
-    <span class="sec-label fade-in">◦ about ◦</span>
-    <h2 class="content-title fade-in">こんにちは、<br>りさです🌙</h2>
-    <p class="profile-lead fade-in">
-      私は転職を10回以上経験し、<br>
-      夫の海外駐在帯同をきっかけに、<br>
-      人間関係に悩み「自分が分からない」<br>
-      そんな時期を過ごしました。<br><br>
-      心理学・占い・AI・発信を学び続ける中で<br>
-      気づいたのは、<br>
-      必要だったのは新しい知識ではなく、<br>
-      <span class="profile-hl">自分の感覚を取り戻すこと</span>でした。<br><br>
-      今は、HSS型HSPさんが<br>
-      自分を後回しにしない人間関係や生き方、<br>
-      働き方を見つけられるよう、<br>
-      診断・鑑定・発信をお届けしています。
-    </p>
-    <img src="images/profile_manga.webp" alt="川上 りさの人生ストーリー" class="profile-manga fade-in">
-  </div>
+<section class="section about" id="about">
+<div class="container about-grid">
+<div class="portrait">
+<img src="present/assets/risa_paris.png" width="1254" height="1254" alt="パリの街を眺める川上りさのプロフィール写真" loading="lazy">
+<p>Risa Kawakami<span>川上 りさ</span>
+</p>
+</div>
+<div>
+<p class="eyebrow">ABOUT ME</p>
+<h2>はじめまして</h2>
+<p>元駐妻として海外で暮らし、妻として、母として、周りに合わせることを優先してきました。</p>
+<p>人間関係や海外生活を通して気づいたのは、誰かの期待に応えることと、自分らしく生きることは、必ずしも同じではないということ。</p>
+<p>今は、自分の感覚を大切にする暮らしや、好きなことを本やアートにする日々を発信しています。</p>
+<p>自分を知ることが、毎日を少しラクにするきっかけになればうれしいです。</p>
+</div>
+</div>
 </section>
-
-<!-- ⑦ 最後のメッセージ -->
-<section class="sec closing-sec">
-  <div class="wrap">
-    <p class="closing-main fade-in">
-      もっと頑張る前に、<br>
-      まずは、自分を知ることから。
-    </p>
-    <p class="closing-sub fade-in">
-      あなたの特性を知ることで、<br>
-      今まで責め続けてきた自分を、<br>
-      <em>少しだけ優しく見られるかもしれません。</em>
-    </p>
-    <a href="https://lin.ee/txWtYjyz" class="btn-main fade-in" target="_blank" rel="noopener">
-      1分でわかる HSPタイプ診断
-      <span class="btn-main-sub">【無料で診断する】</span>
-    </a>
-  </div>
+<section class="section closing">
+<div class="reading">
+<p class="eyebrow">YOUR OWN PACE, YOUR OWN WAY</p>
+<h2>そろそろ、自分の気持ちにも<br>目を向けてみませんか。</h2>
+<p>人に合わせることが当たり前になっていた毎日から。</p>
+<p>まずは、自分のことを知る小さな一歩を。</p>
+<a class="cta" href="https://lin.ee/txWtYjyz" target="_blank" rel="noopener">無料HSPタイプ診断を受け取る<span aria-hidden="true">↗</span>
+</a>
+<p class="note">※この診断は自己理解を目的としたもので、医学的な診断ではありません。</p>
+</div>
 </section>
-
-<footer class="footer">
-  <div class="sns-links">
-    <a href="https://www.instagram.com/risa.art.fortune/" class="sns-link" target="_blank" rel="noopener">📷 Instagram</a>
-    <a href="https://www.threads.com/@risa.art.fortune" class="sns-link" target="_blank" rel="noopener">🧵 Threads</a>
-    <a href="https://note.com/oracle_risa_art" class="sns-link" target="_blank" rel="noopener">📝 note</a>
-  </div>
-  <p class="copyright">© Risa Kawakami</p>
+</main>
+<footer>
+<div class="container">
+<p class="footer-name">川上 りさ</p>
+<div class="footer-links">
+<a href="https://www.reservestock.jp/subscribe/321101" target="_blank" rel="noopener">感覚整理レター</a>
+<a href="https://www.amazon.co.jp/stores/author/B0DTTXQV2K/allbooks" target="_blank" rel="noopener">Kindle書籍一覧</a>
+<a href="https://www.instagram.com/risa.art.fortune/" target="_blank" rel="noopener">Instagram</a>
+<a href="https://www.threads.com/@risa.art.fortune" target="_blank" rel="noopener">Threads</a>
+<a href="https://note.com/oracle_risa_art" target="_blank" rel="noopener">note</a>
+<a href="privacy-policy.html">プライバシーポリシー</a>
+</div>
+<small>© Risa Kawakami</small>
+</div>
 </footer>
-
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-</script>
 </body>
 </html>
