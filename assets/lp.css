@@ -140,7 +140,7 @@ h2{font-size:25px;letter-spacing:.02em;margin-bottom:28px}
 .section-lead{font-size:14px}
 .book-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:30px}
 .book-card{border:1px solid #929b8633;border-radius:6px;background:#fffdf9;padding:24px;display:flex;flex-direction:column}
-.book-new{border-color:var(--gold)}
+.book-new{border-color:#929b8633}
 .book-cover-pending{width:110px;height:155px;margin:0 auto 20px;background:var(--ivory);border:1px dashed #929b8677;display:grid;place-items:center;color:var(--muted);font-size:12px}
 .book-body{display:flex;flex-direction:column;flex:1}
 .book-category{font-size:11px;letter-spacing:.06em;color:#75603b}
@@ -238,3 +238,8 @@ body{font-size:16px}
 .empathy-subtitle{display:block;margin-top:0;font-size:.76em;white-space:nowrap}
 
 .books h2.books-title{color:#826638}
+
+/* 指定見出しの色と、共感見出しの行間だけを調整。 */
+.hero h1,.newsletter-card h3,.line-gifts h2,.closing h2{color:#826638}
+.empathy h2{line-height:1.35}
+.empathy-subtitle{margin:0;padding:0;line-height:1.35}
