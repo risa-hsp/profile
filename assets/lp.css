@@ -243,3 +243,7 @@ body{font-size:16px}
 .hero h1,.newsletter-card h3,.line-gifts h2,.closing h2{color:#826638}
 .empathy h2{line-height:1.35}
 .empathy-subtitle{margin:0;padding:0;line-height:1.35}
+
+/* 引き構図を生かすヒーロー画像の表示範囲。 */
+.hero-photo{width:100%;object-position:center 55%}
+@media(max-width:700px){.hero-photo{height:330px;object-position:82% center}}
