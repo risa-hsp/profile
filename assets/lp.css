@@ -182,3 +182,11 @@ h2{font-size:25px;letter-spacing:.02em;margin-bottom:28px}
 .diagnosis-art-link{display:block;max-width:390px;margin:0 auto 32px}
 .diagnosis-art{width:100%;height:auto;border-radius:6px}
 @media(max-width:700px){.empathy-comic{margin-top:26px}.newsletter-banner{margin-bottom:26px}.diagnosis-art-link{max-width:340px;margin-bottom:28px}}
+
+/* 原画像を残し、上下の見出しを表示範囲から除く。 */
+.empathy-comic-frame{position:relative;overflow:hidden;aspect-ratio:1536/540;margin:34px auto 0;border-radius:4px}
+.empathy-comic-frame .empathy-comic{position:absolute;inset:0 auto auto 0;width:100%;height:auto;margin:0;border-radius:0;transform:translateY(-27.6%)}
+.comic-afterword{margin-top:28px;line-height:2.05}
+.book-cover-link{display:block;width:110px;margin:0 auto 20px}
+.book-cover-link .book-cover{margin:0}
+@media(max-width:700px){.empathy-comic-frame{margin-top:26px}.book-cover-link{flex-shrink:0;width:76px;margin:0}.comic-afterword{margin-top:24px}}
