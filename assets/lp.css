@@ -233,3 +233,6 @@ body{font-size:16px}
 .lesson-overview h3{font-size:21px}
 .supplement-title{font-size:23px}
 }
+
+/* 共感見出し：2行目のみ小さくし、間を1行分空ける。 */
+.empathy-subtitle{display:block;margin-top:1.8em;font-size:.76em;white-space:nowrap}
