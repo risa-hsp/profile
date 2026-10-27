@@ -190,3 +190,46 @@ h2{font-size:25px;letter-spacing:.02em;margin-bottom:28px}
 .book-cover-link{display:block;width:110px;margin:0 auto 20px}
 .book-cover-link .book-cover{margin:0}
 @media(max-width:700px){.empathy-comic-frame{margin-top:26px}.book-cover-link{flex-shrink:0;width:76px;margin:0}.comic-afterword{margin-top:24px}}
+
+/* 最終調整：主役は無料診断。配色・写真・書籍カードは維持。 */
+.hero-invitation{font-size:16px;max-width:410px;margin-top:16px;line-height:2}
+.diagnosis-intro{background:#e7e9e1}
+.diagnosis-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.diagnosis-intro h2{font-size:clamp(25px,2.7vw,34px)}
+.diagnosis-intro-card{background:#fcfaf5;padding:32px;border:1px solid #c3a66f55;border-radius:8px}
+.diagnosis-intro-card h3{font-size:20px}
+.diagnosis-points{padding-left:1.4em;margin:24px 0;line-height:2}
+.diagnosis-points li{padding:5px 0}
+.diagnosis-points li::marker{color:#69735d}
+.lesson-overview{padding-bottom:32px;margin-bottom:32px;border-bottom:1px solid #929b8640}
+.lesson-overview h3{font-size:22px;margin-bottom:16px}
+.lesson-overview p{max-width:680px}
+.supplement-title{font-size:26px;margin-bottom:28px}
+.newsletter .newsletter-card h3{font-size:25px;margin-bottom:18px}
+.newsletter .newsletter-card h3 span{display:block;font-size:16px;margin-bottom:6px}
+body{font-size:16px}
+.hero-lead,.about p:not(.eyebrow),.closing p:not(.eyebrow):not(.note),.section-lead,.book-body>p:not(.book-category),.newsletter p:not(.eyebrow):not(.note){font-size:16px}
+.cta{font-size:16px;min-height:64px}
+.note{font-size:13px;color:#555d4f}
+.book-link,.text-link,.footer-links{font-size:14px}
+.hero .eyebrow,.eyebrow{font-size:12px;color:#596150}
+footer small{font-size:12px}
+@media(max-width:700px){
+body{font-size:16px}
+.section{padding-top:58px;padding-bottom:58px}
+.hero-lead,.hero-invitation{font-size:16px}
+.hero .eyebrow{font-size:11px}
+.hero-content{padding-bottom:44px}
+.diagnosis-intro-grid{grid-template-columns:1fr;gap:28px}
+.diagnosis-intro-card{padding:24px 20px}
+.diagnosis-intro-card h3{font-size:18px}
+.cta{font-size:15px;padding-left:12px;padding-right:12px;gap:10px}
+.note,.closing .note{font-size:13px}
+.book-card{gap:14px}
+.book-body>p:not(.book-category){font-size:16px;line-height:1.9}
+.book-card h3{font-size:18px}
+.book-link{font-size:14px}
+.newsletter .note{font-size:13px}
+.lesson-overview h3{font-size:21px}
+.supplement-title{font-size:23px}
+}
