@@ -1,0 +1,114 @@
+:root{--paper:#f6f1ea;--band:#efe7dc;--card:#fffaf4;--ink:#3a2a20;--soft:#7a6a5d;--gold:#a8875a;--green:#66735E;--line:#e3d6c6;--dark:#3a322c;--dark-ink:#efe6da}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Sans","Yu Gothic","YuGothic","Noto Sans JP",sans-serif;font-size:16px;line-height:2.1;letter-spacing:.03em;-webkit-text-size-adjust:100%;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--green)}
+h1,h2,h3,.cta-title,.big{font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP",serif;font-weight:500;letter-spacing:.04em}
+em{font-style:normal;color:var(--gold)}
+
+.in{max-width:640px;margin:0 auto;padding:0 22px;position:relative}
+
+/* ファーストビュー */
+.hero-img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.hero-text{padding-top:36px;padding-bottom:8px}
+.hero h1{font-size:24px;letter-spacing:.02em;line-height:1.7;margin:0 0 28px}
+.hero p{margin:0 0 1.15em}
+
+/* 段 */
+.sec{position:relative;padding:56px 0 40px;overflow:hidden}
+.sec p{margin:0 0 1.15em}
+.sec h2{font-size:26px;line-height:1.6;margin:0 0 18px;position:relative;z-index:1}
+.sec h2::after{content:"";display:block;width:48px;height:1px;background:var(--gold);margin-top:22px}
+.band{background:var(--band)}
+.dark{background:var(--dark);color:var(--dark-ink)}
+.center .in{text-align:center}
+.center h2{font-size:30px}
+.center h2::after{margin-left:auto;margin-right:auto}
+.ps{padding-top:40px}
+
+.deco{position:absolute;top:0;width:110px;opacity:.35;pointer-events:none;mix-blend-mode:multiply;z-index:0}
+.deco-right{right:-30px}.deco-left{left:-30px}
+
+/* 一文を大きく */
+.big{font-size:21px;line-height:1.75;margin:30px 0 30px!important;position:relative;z-index:1}
+.dark .big{color:#f4ead9}
+.center .big{font-size:26px}
+
+/* 心の声 */
+.voice{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:8px;padding:12px 16px;line-height:1.9;font-family:"Hiragino Mincho ProN","Yu Mincho",serif;position:relative;z-index:1}
+.dark .voice{background:#463d36;border-color:#5d5249;border-left-color:var(--gold);color:#e9ddcd}
+.center .voice{text-align:left}
+
+/* 写真 */
+.photo{margin:8px auto 30px;border-radius:16px}
+.photo-tall{width:56%;max-width:260px;aspect-ratio:4/5;object-fit:cover;object-position:50% 0;box-shadow:0 18px 36px -28px #3a2a2088}
+.photo-wide{width:100%}
+.photo-small{width:38%;max-width:170px;box-shadow:0 14px 28px -22px #3a2a2088}
+.profile{width:132px;height:132px;border-radius:50%;object-fit:cover;margin:6px 0 24px}
+.sign{text-align:right;font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:18px}
+.center .sign{text-align:center}
+
+/* まとめた形 */
+.timeline{list-style:none;margin:6px 0 30px 6px;padding:0 0 0 22px;border-left:1px solid var(--gold);text-align:left}
+.timeline li{position:relative;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 16px;margin:0 0 12px;line-height:1.8}
+.timeline li::before{content:"";position:absolute;left:-28.5px;top:50%;width:11px;height:11px;margin-top:-5px;border-radius:50%;background:var(--gold)}
+.chips{list-style:none;margin:6px 0 30px;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.chips li{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 16px;line-height:1.8;font-size:15px}
+.dark .chips li{background:#463d36;border-color:#5d5249}
+.grid{list-style:none;margin:6px 0 30px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;font-size:14px;line-height:1.8}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0 30px}
+.pair-card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.pair-card p{margin:0!important;padding:14px 14px 4px;font-size:14px;line-height:1.8;flex:1}
+.pair-card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+
+.checks{list-style:none;margin:8px 0 28px;padding:20px 22px;background:var(--card);border-radius:14px}
+.checks li{position:relative;padding-left:1.6em;margin:.35em 0;line-height:1.9}
+.checks li::before{content:"✓";position:absolute;left:0;color:var(--green)}
+
+.type{background:var(--card);border-radius:14px;padding:18px 22px;margin:0 0 14px}
+.type h3{font-size:18px;margin:0 0 6px;color:var(--green)}
+.type p{margin:0!important;font-size:15px;line-height:1.9}
+
+/* 診断の案内 */
+.sec-cta{padding:20px 0}
+.cta-box{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px 20px 24px;margin:24px 0;text-align:center;box-shadow:0 20px 40px -32px #3a2a2055;position:relative;z-index:1}
+.cta-banner{width:100%;border-radius:12px;margin:0 0 20px}
+.cta-box p{margin:0 0 1em}
+.cta-title{font-size:21px;line-height:1.6;margin:0 0 14px!important}
+.button{display:block;margin:20px auto 14px;max-width:420px;padding:18px 20px;border-radius:999px;background:var(--green);color:#fff;text-decoration:none;font-weight:600;font-size:15px;line-height:1.5;white-space:nowrap;box-shadow:0 12px 24px -14px #66735E;transition:transform .3s,box-shadow .3s}
+.button::after{content:" ↗"}
+.button:hover{transform:translateY(-2px);box-shadow:0 16px 28px -14px #66735E}
+.note{font-size:12.5px;line-height:1.9;color:var(--soft);text-align:left}
+
+/* 下に出るボタン（スマホ） */
+.float-button{position:fixed;left:16px;right:16px;bottom:14px;z-index:10;display:none;padding:15px 16px;border-radius:999px;background:var(--green);color:#fff;text-align:center;text-decoration:none;font-weight:600;font-size:15px;box-shadow:0 10px 30px -10px #3a2a2088;transform:translateY(140%);transition:transform .4s}
+.float-button.show{transform:none}
+@media(max-width:760px){.float-button{display:block}}
+
+.foot{text-align:center;padding:40px 20px 110px;border-top:1px solid var(--line);font-size:13px;color:var(--soft)}
+.foot p{margin:.4em 0}
+.books{max-width:420px;margin:0 auto 36px}.books-title{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:15px;color:var(--ink)}.covers{display:flex;justify-content:center;gap:14px;margin:12px 0 10px}.covers img{width:72px;height:auto;border-radius:3px;box-shadow:0 8px 16px -10px #3a2a2099}.foot .books-link{color:var(--green)}
+.foot a{color:var(--soft);margin:0 .4em}
+.foot-name{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:17px;color:var(--ink)}
+.copy{font-size:11px}
+
+/* ふわっと出る */
+.motion .reveal{opacity:0;transform:translateY(16px);transition:opacity .9s,transform .9s}
+.motion .reveal.in-view{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.motion .reveal{opacity:1;transform:none;transition:none}.float-button{transition:none}}
+
+@media(min-width:761px){
+  body{font-size:17px}
+  .hero{max-width:1000px;margin:0 auto;padding:32px 22px 0}
+  .hero-img{border-radius:24px}
+  .hero h1{font-size:38px}
+  .sec h2{font-size:32px}
+  .center h2{font-size:40px}
+  .big{font-size:25px}
+  .center .big{font-size:32px}
+  .deco{width:220px}
+  .deco-right{right:calc(50% - 470px)}.deco-left{left:calc(50% - 470px)}
+  .foot{padding-bottom:40px}
+}
